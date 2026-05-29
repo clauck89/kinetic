@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KINETIC | Advanced Search &amp; Discovery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#747688",
+                    "on-surface": "#1b1b1e",
+                    "on-primary-container": "#d4d9ff",
+                    "surface-container-highest": "#e4e1e6",
+                    "on-secondary-fixed": "#161e00",
+                    "on-background": "#1b1b1e",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "inverse-surface": "#303033",
+                    "secondary-container": "#c1f100",
+                    "on-primary-fixed-variant": "#0033c0",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#506600",
+                    "surface": "#fbf8fc",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#eae7eb",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#546b00",
+                    "inverse-on-surface": "#f3f0f4",
+                    "inverse-primary": "#b9c3ff",
+                    "tertiary": "#47484a",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e4e1e6",
+                    "primary-container": "#0047ff",
+                    "tertiary-container": "#5f6061",
+                    "secondary-fixed-dim": "#abd600",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#dbdbdc",
+                    "on-secondary-fixed-variant": "#3c4d00",
+                    "surface-container-low": "#f6f2f7",
+                    "error": "#ba1a1a",
+                    "background": "#fbf8fc",
+                    "on-primary-fixed": "#001257",
+                    "surface-container": "#f0edf1",
+                    "surface-tint": "#0046fa",
+                    "primary-fixed": "#dde1ff",
+                    "on-tertiary-fixed": "#1a1c1d",
+                    "on-tertiary-fixed-variant": "#454748",
+                    "primary-fixed-dim": "#b9c3ff",
+                    "outline-variant": "#c4c5da",
+                    "surface-dim": "#dcd9dd",
+                    "primary": "#0035c5",
+                    "tertiary-fixed": "#e2e2e3",
+                    "on-surface-variant": "#434657",
+                    "secondary-fixed": "#c3f400",
+                    "surface-bright": "#fbf8fc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "container-max": "1280px",
+                    "section-gap": "80px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "label-sm": ["Inter"],
+                    "label-bold": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #747688; border-radius: 10px; }
+        .glass-effect { backdrop-filter: blur(8px); background: rgba(255, 255, 255, 0.8); }
+        .product-hover:hover .product-img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 bg-surface shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div class="flex justify-between items-center w-full px-margin-desktop py-base max-w-container-max mx-auto">
+<div class="flex items-center gap-12">
+<a class="text-headline-md font-headline-md font-extrabold text-primary tracking-tighter italic" href="cat_logo-tenis.html">KINETIC</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant font-medium pb-1 hover:text-primary transition-colors duration-200 text-label-bold font-label-bold" href="cat_logo-tenis.html">Men</a>
+<a class="text-on-surface-variant font-medium pb-1 hover:text-primary transition-colors duration-200 text-label-bold font-label-bold" href="cat_logo_completo_20_art_culos.html">Women</a>
+<a class="text-primary border-b-2 border-secondary pb-1 text-label-bold font-label-bold" href="Busqueda-avanzada.html">Collections</a>
+<a class="text-on-surface-variant font-medium pb-1 hover:text-primary transition-colors duration-200 text-label-bold font-label-bold" href="Login.html">Admin</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<a class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant hover:border-primary transition-all" href="Busqueda-avanzada.html">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md ml-2 w-48 pointer-events-none" placeholder="Search catalog..." type="text" readonly/>
+</a>
+<a class="active:scale-95 transition-transform inline-flex" href="carrito_de_compras.html" aria-label="Carrito de compras"><span class="material-symbols-outlined text-primary" data-icon="shopping_cart">shopping_cart</span></a>
+<a class="active:scale-95 transition-transform inline-flex" href="Login.html" aria-label="Iniciar sesión"><span class="material-symbols-outlined text-primary" data-icon="account_circle">account_circle</span></a>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-desktop py-base flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 lg:w-72 shrink-0 space-y-8 py-base">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-headline-md font-headline-md text-on-surface uppercase tracking-tight">Filters</h2>
+<button class="text-label-sm font-label-sm text-primary hover:underline">Clear All</button>
+</div>
+<!-- Category -->
+<section class="space-y-4">
+<h3 class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest">Category</h3>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Men</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Women</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Kids</span>
+</label>
+</div>
+</section>
+<!-- Brand -->
+<section class="space-y-4">
+<h3 class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest">Brand</h3>
+<div class="grid grid-cols-1 gap-2">
+<button class="text-left text-body-md px-3 py-2 rounded-lg bg-surface-container hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+<span>Nike</span>
+<span class="text-label-sm text-outline group-hover:text-primary">124</span>
+</button>
+<button class="text-left text-body-md px-3 py-2 rounded-lg bg-primary text-on-primary shadow-sm flex justify-between items-center">
+<span>Adidas</span>
+<span class="text-label-sm">89</span>
+</button>
+<button class="text-left text-body-md px-3 py-2 rounded-lg bg-surface-container hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+<span>Puma</span>
+<span class="text-label-sm text-outline group-hover:text-primary">45</span>
+</button>
+<button class="text-left text-body-md px-3 py-2 rounded-lg bg-surface-container hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+<span>New Balance</span>
+<span class="text-label-sm text-outline group-hover:text-primary">67</span>
+</button>
+</div>
+</section>
+<!-- Size Slider/Grid -->
+<section class="space-y-4">
+<h3 class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest">Size (US)</h3>
+<div class="grid grid-cols-4 gap-2">
+<button class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">7</button>
+<button class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">8</button>
+<button class="bg-primary text-on-primary py-2 text-label-sm rounded">9</button>
+<button class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">10</button>
+<button class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">11</button>
+<button class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">12</button>
+<button class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">13</button>
+</div>
+</section>
+<!-- Price Range -->
+<section class="space-y-4">
+<h3 class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest">Price Range</h3>
+<div class="px-2">
+<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="500" min="0" type="range" value="250"/>
+<div class="flex justify-between mt-4">
+<span class="text-label-bold font-label-bold px-3 py-1 bg-surface-container-low rounded border border-outline-variant">$0</span>
+<span class="text-label-bold font-label-bold px-3 py-1 bg-surface-container-low rounded border border-outline-variant">$500</span>
+</div>
+</div>
+</section>
+<!-- Technology -->
+<section class="space-y-4">
+<h3 class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest">Technology</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-1.5 rounded-full border border-primary text-primary text-label-sm font-label-bold bg-primary-fixed">Air</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant text-label-sm hover:border-primary hover:text-primary transition-all">Gel</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant text-label-sm hover:border-primary hover:text-primary transition-all">Nitro</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant text-label-sm hover:border-primary hover:text-primary transition-all">Boost</button>
+</div>
+</section>
+<!-- Color Selection -->
+<section class="space-y-4">
+<h3 class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest">Color</h3>
+<div class="flex flex-wrap gap-3">
+<button class="w-8 h-8 rounded-full bg-on-surface ring-2 ring-offset-2 ring-primary transition-all"></button>
+<button class="w-8 h-8 rounded-full bg-white border border-outline-variant ring-offset-2 hover:ring-2 hover:ring-primary-container transition-all"></button>
+<button class="w-8 h-8 rounded-full bg-primary ring-offset-2 hover:ring-2 hover:ring-primary-container transition-all"></button>
+<button class="w-8 h-8 rounded-full bg-secondary-container ring-offset-2 hover:ring-2 hover:ring-primary-container transition-all"></button>
+<button class="w-8 h-8 rounded-full bg-error ring-offset-2 hover:ring-2 hover:ring-primary-container transition-all"></button>
+</div>
+</section>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 space-y-gutter">
+<!-- Hero Search Header -->
+<header class="relative overflow-hidden rounded-xl bg-surface-container-highest p-8 md:p-12 shadow-sm border border-outline-variant">
+<div class="relative z-10 max-w-2xl">
+<h1 class="text-headline-xl font-headline-xl text-on-surface mb-4">ENGINEERED FOR THE <span class="text-primary italic">EDGE.</span></h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-8">Discover the latest in high-performance sneaker technology. Filter by tech, style, or sport to find your next competitive advantage.</p>
+<div class="flex items-center bg-surface p-1 rounded-lg border border-outline shadow-lg max-w-md">
+<input class="flex-1 border-none focus:ring-0 text-body-md px-4 py-2" placeholder="Search by model, brand, or style..." type="text"/>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded shadow hover:bg-primary transition-all font-label-bold flex items-center gap-2">
+<span>Search</span>
+<span class="material-symbols-outlined text-[18px]">search</span>
+</button>
+</div>
+</div>
+<!-- Abstract Background Element -->
+<div class="absolute -right-20 -bottom-20 w-96 h-96 bg-secondary-container opacity-20 rounded-full blur-3xl"></div>
+<div class="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:block opacity-10">
+<span class="material-symbols-outlined text-[240px] font-thin text-primary">sprint</span>
+</div>
+</header>
+<!-- Results Grid Controls -->
+<div class="flex items-center justify-between border-b border-outline-variant pb-4">
+<p class="text-body-md text-on-surface-variant"><span class="font-bold text-on-surface">1,248</span> Results found</p>
+<div class="flex items-center gap-4">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Sort by:</span>
+<select class="bg-transparent border-none text-label-bold font-label-bold text-primary focus:ring-0 cursor-pointer">
+<option>Newest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Most Popular</option>
+</select>
+</div>
+</div>
+<!-- Bento Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 (Large Feature) -->
+<div class="product-hover relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div class="aspect-[4/5] bg-surface-container-highest relative overflow-hidden">
+<img class="product-img w-full h-full object-cover transition-transform duration-500" data-alt="A side-profile shot of a vibrant red high-performance running sneaker on a neutral light grey background. The lighting is high-contrast and professional, emphasizing the aerodynamic design and the textured fabric of the shoe. The mood is energetic and athletic, capturing the high-octane luxury feel of a premier sports brand. The image is crisp and clean with a focus on technological detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl_rfwJE2oaCJyhR5LM5UKLpWgHHveRgyxiaqVUVo6SVVNX9IUn49zPelgrOcnoheBj5-Is5y9EjkIysRACAIm-O0iYWwiCFnkY4R9Ci7_E29uV6RKXIJUVqtGr5ngBdFWry82M8Et6S1SD6rCYvCp9Uhz_t-10h_KiTzD3CFdgQucIXaZHx_VHVGhw4qkAPt3V3eNFChFwV4xcHHGekcgTg2j3u96ASIrEkeD5yc1M1tp_0cs2AQrZubqrVgdZt_MvlBqup0c3SI"/>
+<div class="absolute top-4 left-4 bg-secondary-fixed text-on-secondary-fixed text-label-bold font-label-bold px-3 py-1 rounded shadow-sm">NEW RELEASE</div>
+<button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-label-bold font-label-bold text-primary mb-1 uppercase">Nike</h3>
+<p class="text-headline-md font-headline-md text-on-surface">ZoomX Vaporfly Next% 2</p>
+</div>
+<span class="text-headline-md font-headline-md text-on-surface">$250</span>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-6">Electric Blue / Crimson Flare</p>
+<a class="w-full py-3 bg-on-surface text-surface rounded-lg font-label-bold flex items-center justify-center gap-2 group-hover:bg-primary transition-all" href="carrito_de_compras.html">
+<span>Add to Bag</span>
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+</a>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="product-hover relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div class="aspect-[4/5] bg-surface-container-highest relative overflow-hidden">
+<img class="product-img w-full h-full object-cover transition-transform duration-500" data-alt="A pair of sleek white and neon-accented futuristic sneakers placed elegantly on a soft grey studio backdrop. The lighting is diffuse yet bright, highlighting the premium leather textures and neon green stitching details. The aesthetic is clean and modern, evoking a high-fashion street-style status. The composition is professional and spacious, reflecting an elite athletic lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaLiepdNc13xDYgl5KroFEUCwZsUts9rxrichI2vXP0LRIcXBpOvt39REB_iVzj8KbWLaYspvY7MF6syatSiFyHx0Ol-maGjbiKjEJ1lHfjUqZ1xGMkhIqA1c9QNEmOCNQgaAeokGVvcOrPdHY-i4mRZg-_dMUSFlstLpTYQni0dXgtwD4Htvc2cc8GuNV91_7_KrrcZFjdaMvnxUxxRbhP-TV9xBsiP2yT1WJo2yEy7SbXgtdcG9ckv3CMggU5MxXjcPqubEfyvY"/>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-bold font-label-bold px-3 py-1 rounded shadow-sm italic">LIMITED</div>
+<button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-label-bold font-label-bold text-primary mb-1 uppercase">Adidas</h3>
+<p class="text-headline-md font-headline-md text-on-surface">UltraBoost Light</p>
+</div>
+<span class="text-headline-md font-headline-md text-on-surface">$190</span>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-6">Cloud White / Solar Green</p>
+<a class="w-full py-3 border border-on-surface text-on-surface rounded-lg font-label-bold flex items-center justify-center gap-2 hover:bg-on-surface hover:text-surface transition-all" href="Detalle-producto.html">
+<span>View Details</span>
+</a>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="product-hover relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div class="aspect-[4/5] bg-surface-container-highest relative overflow-hidden">
+<img class="product-img w-full h-full object-cover transition-transform duration-500" data-alt="A premium black athletic sneaker with chrome silver accents and a translucent sole, displayed in a minimalist high-contrast lighting setup. The dark materials absorb the light while the chrome elements create sharp, dynamic reflections. The overall mood is sophisticated and technological, appealing to performance-oriented consumers. The scene is set against a pristine, solid light grey background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXuiBZlPojc7hXCDJOL_XTQp3zg5DhfJF0XR914vXHHhqCrmcto9NSMyh57GA_OWUwazpgpN2ZZdxoHvHfdRaGIz0IWRv-oSKEUBtVvPM9O0fR_Q5uMGKs-y2hYSvYG6556zX8QkbJKSMSb_EKjUD0L03kwZpKAirOYdIKXXauNK5X0jNqgPPG3RakaUnXMEb4fFuMb6mv7ahxyuYHtiHe_fav1cZpeCItwWt-NVZSHjteiiC-HqXvWmd2RzFExAvmh4r1AbIdHc0"/>
+<button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-label-bold font-label-bold text-primary mb-1 uppercase">New Balance</h3>
+<p class="text-headline-md font-headline-md text-on-surface">Fresh Foam X 1080</p>
+</div>
+<span class="text-headline-md font-headline-md text-on-surface">$160</span>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-6">Midnight Navy / Chrome</p>
+<a class="w-full py-3 bg-on-surface text-surface rounded-lg font-label-bold flex items-center justify-center gap-2 group-hover:bg-primary transition-all" href="carrito_de_compras.html">
+<span>Add to Bag</span>
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+</a>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="product-hover relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div class="aspect-[4/5] bg-surface-container-highest relative overflow-hidden">
+<img class="product-img w-full h-full object-cover transition-transform duration-500" data-alt="A sleek and aggressive neon yellow training shoe on a clean light-colored background. The photography captures the complex mesh texture and the sturdy rubber outsole designed for high-impact sports. The lighting is direct and bright, highlighting the vibrant color palette and the high-energy design philosophy. The aesthetic is contemporary and powerful, emphasizing sports performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHpHn8RZcnsCTGa535grSNRnALpS5HtSux_LG0rTOhxpXCL3fWARJeiOYpQW6sZz3n70QxtZ4plTxUggTRkjYEJjtXcNqrXUCHuh4PZwG8vMS04b0YegQ0CIWpRQmNqRzvWpO5Hoomx2BhUjxCu9inLaa5UocQSz7JOEUGyBREiqQfT0lV7KDBT_re2CvW5yAk7mHfzC5Hz6YWIchiH9L70eKgy1gyjkWTCZBmUkpxscelQlN6awsNFPa5OQjU3iquxrJDQb3i_pY"/>
+<div class="absolute bottom-4 left-4 bg-error text-on-error text-label-bold font-label-bold px-3 py-1 rounded shadow-sm">20% OFF</div>
+<button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-label-bold font-label-bold text-primary mb-1 uppercase">Nike</h3>
+<p class="text-headline-md font-headline-md text-on-surface">Metcon 8</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-headline-md font-headline-md text-on-surface">$104</span>
+<span class="text-label-sm text-outline line-through">$130</span>
+</div>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-6">Volt / Anthracite</p>
+<a class="w-full py-3 bg-on-surface text-surface rounded-lg font-label-bold flex items-center justify-center gap-2 group-hover:bg-primary transition-all" href="carrito_de_compras.html">
+<span>Add to Bag</span>
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+</a>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="product-hover relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div class="aspect-[4/5] bg-surface-container-highest relative overflow-hidden">
+<img class="product-img w-full h-full object-cover transition-transform duration-500" data-alt="A minimalist aesthetic photograph of a high-end designer sneaker in soft pastel tones, presented on a monochromatic light grey pedestal. The lighting is soft and directional, creating gentle shadows that define the shoe's sleek silhouette and premium materials. The mood is calm and luxury-focused, blending athletic functionality with editorial fashion style. The background is uncluttered and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcN_AXLeMr6IgXPdahToBNCBn8rOYGgahX05bo73Z1MDUD0WbQAwVPK4SoBduuXOuWrkSyPNItNjd42GhLj0HKTzwV6VHqgXH4gWgjml5EYrzO4_5yjEdGj9W3NKBmxCQApsQPMQuixzIqtT4Ebgs4di9rmVD5aXFlHq75GRfxLombJ-pUQJaWIVorqAkCQMJzIn7VpTu6jH-wpVxk6YXAE6BeSyR_1vSUaErKj_6-W9ZBVsVa0eYzJmuhgEEA6fqvTww7J_TRKpA"/>
+<button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-label-bold font-label-bold text-primary mb-1 uppercase">Puma</h3>
+<p class="text-headline-md font-headline-md text-on-surface">Deviate Nitro 2</p>
+</div>
+<span class="text-headline-md font-headline-md text-on-surface">$160</span>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-6">Sunset Orange / Nitro Blue</p>
+<a class="w-full py-3 bg-on-surface text-surface rounded-lg font-label-bold flex items-center justify-center gap-2 group-hover:bg-primary transition-all" href="carrito_de_compras.html">
+<span>Add to Bag</span>
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+</a>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="product-hover relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div class="aspect-[4/5] bg-surface-container-highest relative overflow-hidden">
+<img class="product-img w-full h-full object-cover transition-transform duration-500" data-alt="A bold, high-contrast shot of a performance basketball shoe featuring intricate patterns and metallic accents. The shoe is positioned dynamically as if in motion, set against a studio backdrop with dramatic top-down lighting that emphasizes its structural integrity and material complexity. The aesthetic is loud and competitive, capturing the intensity of professional sports. The colors are vivid and high-definition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLQeWXW3Sqp4h4OTF5r3553-FUWdWi9NmRAoD1m-sLZJrpVPVwufVpnIP2bw8pFNWmFgd2hS8Ql1i32MRs4n4Wd8oUcMNCxnfbUrUUSPFIeYCwhzSEErHKQWlpx7CqLHfYzQeROVAY7C786-K63o_FnOBlSNp6dCj8wMrCJeoPQMSMwSL97mAUuaGNdzGs81Z5K9U_64wtc4N1cuz4jA3xDNu7GZ5RNPbJEceoN7mEPVsVLwVuDt2CdRvxcWCKWysiRWnHzv2K_fw"/>
+<button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-label-bold font-label-bold text-primary mb-1 uppercase">Jordan</h3>
+<p class="text-headline-md font-headline-md text-on-surface">Luka 2 'Black &amp; White'</p>
+</div>
+<span class="text-headline-md font-headline-md text-on-surface">$130</span>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-6">Oreo / Pure Platinum</p>
+<a class="w-full py-3 bg-on-surface text-surface rounded-lg font-label-bold flex items-center justify-center gap-2 group-hover:bg-primary transition-all" href="carrito_de_compras.html">
+<span>Add to Bag</span>
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-2 pt-8">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-label-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors font-label-bold">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors font-label-bold">3</button>
+<span class="px-2">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors font-label-bold">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest mt-section-gap">
+<div class="w-full px-margin-desktop py-section-gap max-w-container-max mx-auto flex flex-col md:flex-row justify-between gap-gutter">
+<div class="flex flex-col gap-6 md:max-w-xs">
+<a class="text-headline-md font-headline-md font-extrabold text-primary" href="cat_logo-tenis.html">KINETIC</a>
+<p class="text-body-md text-on-surface-variant">The leading destination for high-performance athletic footwear and elite streetwear. Join the community of professionals.</p>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full bg-on-surface text-surface flex items-center justify-center hover:bg-primary transition-all"><span class="material-symbols-outlined">public</span></button>
+<button class="w-10 h-10 rounded-full bg-on-surface text-surface flex items-center justify-center hover:bg-primary transition-all"><span class="material-symbols-outlined">rss_feed</span></button>
+<button class="w-10 h-10 rounded-full bg-on-surface text-surface flex items-center justify-center hover:bg-primary transition-all"><span class="material-symbols-outlined">share</span></button>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-3 gap-gutter flex-1">
+<div class="space-y-4">
+<h4 class="text-label-bold font-label-bold text-on-surface uppercase tracking-widest">Support</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Returns</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Size Guide</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-label-bold font-label-bold text-on-surface uppercase tracking-widest">Company</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Sustainability</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col justify-between items-end gap-6">
+<div class="text-right">
+<h4 class="text-label-bold font-label-bold text-on-surface mb-2">JOIN THE SPRINT</h4>
+<div class="flex bg-surface p-1 rounded border border-outline-variant">
+<input class="bg-transparent border-none focus:ring-0 text-body-md px-4" placeholder="Email Address" type="email"/>
+<a class="bg-primary text-on-primary px-4 py-2 font-label-bold inline-flex items-center" href="Crear-cuenta.html">Join</a>
+</div>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase">© 2024 KINETIC ATHLETICS. ALL RIGHTS RESERVED.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for Filter Sidebar
+        document.querySelectorAll('input[type="range"]').forEach(range => {
+            range.addEventListener('input', (e) => {
+                const val = e.target.value;
+                // Dynamically update UI if needed
+            });
+        });
+
+        // Add sticky hover effect for product cards
+        document.querySelectorAll('.product-hover').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

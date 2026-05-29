@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KINETIC ATHLETICS | Premium Sneaker Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f3f0f4",
+                    "on-secondary-container": "#546b00",
+                    "surface-container-high": "#eae7eb",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#c1f100",
+                    "on-primary-fixed-variant": "#0033c0",
+                    "surface": "#fbf8fc",
+                    "secondary": "#506600",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "inverse-surface": "#303033",
+                    "on-background": "#1b1b1e",
+                    "on-secondary-fixed": "#161e00",
+                    "surface-container-highest": "#e4e1e6",
+                    "outline": "#747688",
+                    "on-primary-container": "#d4d9ff",
+                    "on-surface": "#1b1b1e",
+                    "secondary-fixed": "#c3f400",
+                    "surface-bright": "#fbf8fc",
+                    "tertiary-fixed": "#e2e2e3",
+                    "on-surface-variant": "#434657",
+                    "primary": "#0035c5",
+                    "surface-dim": "#dcd9dd",
+                    "on-tertiary-fixed-variant": "#454748",
+                    "outline-variant": "#c4c5da",
+                    "primary-fixed-dim": "#b9c3ff",
+                    "primary-fixed": "#dde1ff",
+                    "on-tertiary-fixed": "#1a1c1d",
+                    "surface-tint": "#0046fa",
+                    "on-primary-fixed": "#001257",
+                    "error": "#ba1a1a",
+                    "background": "#fbf8fc",
+                    "surface-container": "#f0edf1",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#dbdbdc",
+                    "on-secondary-fixed-variant": "#3c4d00",
+                    "surface-container-low": "#f6f2f7",
+                    "secondary-fixed-dim": "#abd600",
+                    "tertiary-container": "#5f6061",
+                    "inverse-primary": "#b9c3ff",
+                    "primary-container": "#0047ff",
+                    "surface-variant": "#e4e1e6",
+                    "tertiary": "#47484a",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "8px",
+                    "section-gap": "80px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #0035c5 0%, #0047ff 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+        }
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+            50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-base max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-gutter">
+<a class="text-headline-md font-headline-md font-extrabold text-primary tracking-tighter italic" href="cat_logo-tenis.html">KINETIC</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="cat_logo-tenis.html">Men</a>
+<a class="text-label-bold font-label-bold text-primary border-b-2 border-secondary pb-1 hover:text-primary transition-colors duration-200" href="cat_logo_completo_20_art_culos.html">Women</a>
+<a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="Busqueda-avanzada.html">Collections</a>
+<a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="Login.html">Admin</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<a class="hidden md:flex relative group items-center" href="Busqueda-avanzada.html">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container border border-outline-variant rounded-full text-label-sm focus:outline-none focus:ring-2 focus:ring-primary w-64 transition-all pointer-events-none" placeholder="Search sneakers..." type="text" readonly/>
+</a>
+<div class="flex items-center gap-4">
+<a class="relative hover:scale-105 transition-transform inline-flex" href="carrito_de_compras.html" aria-label="Carrito de compras">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-on-secondary text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</a>
+<a class="hover:scale-105 transition-transform inline-flex" href="Login.html" aria-label="Iniciar sesión">
+<span class="material-symbols-outlined text-primary" data-icon="account_circle">account_circle</span>
+</a>
+</div>
+</div>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[870px] overflow-hidden flex items-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A dynamic, high-energy action shot of a professional athlete sprinting in high-tech sneakers on a sleek, modern concrete track." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtWfGXaFmBSXBcy11aL2GuqqRZm_TW2rNJzcHWvOPtdvWUK2s_3Yt7epbI9O9w720nLhmDrqAHevJNuZRKjRRTSBHqh59gQRbanHrtb6iAwl68-cjrDrCoID8TiY4R8-gJe8LZwz9_hznsy8r6TQRzqcvt34GAzd_RkdgWksJ31z45Qy2TehioOt28irF-o1eDe_WyrZnaWHawaFGojGYFMbZ7DbD3Vr4MkUFOPFLNA7A1Yh5wscWKeaILfSfBcgjz5M7EIDz7xgs"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+</div>
+<div class="container mx-auto px-margin-desktop relative z-10">
+<div class="max-w-2xl">
+<span class="inline-block bg-secondary text-on-secondary px-4 py-1 text-label-bold rounded-full mb-6">NEW SEASON DROP</span>
+<h1 class="text-headline-xl font-headline-xl text-on-background mb-4 uppercase leading-tight">Velocity <br/><span class="text-primary italic">Redefined.</span></h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-8 max-w-md">Experience the pinnacle of kinetic engineering. Designed for those who demand elite performance and unmatched street-style status.</p>
+<div class="flex items-center gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 text-label-bold rounded-lg border-2 border-transparent hover:border-secondary-fixed transition-all active:scale-95 inline-flex items-center" href="cat_logo_completo_20_art_culos.html">
+                            Shop New Arrivals
+                        </a>
+<a class="border border-outline-variant px-8 py-4 text-label-bold rounded-lg hover:bg-surface-container transition-all inline-flex items-center" href="Busqueda-avanzada.html">
+                            View Collections
+                        </a>
+</div>
+</div>
+</div>
+<!-- Floating Product Detail Micro-Card -->
+<div class="absolute bottom-12 right-12 glass-card p-6 rounded-xl shadow-2xl hidden lg:block animate-bounce-slow">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up studio shot of a vibrant red high-performance sneaker." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4IRTQKJyx-8Xa_pqJNJkMWJIAq-jyum-y9Q9nTcdZo1VkbZ1M15t1gQR9WFFOxA_zEuaX-GoPNDTA0wan-vV1vN-gK5-EzR8wILUHwTF3QLmuTs-HmyR-H2LRMNtUi0NrtFoT9viO3ZVClY0ejH6OZOIdk2wBUJ7LsQNuAnMXABPw2DJrJEVUoJohWVIYRzATAIAJowcll4AXP0gzvCX8TtKBm3ZuKs1IUtQYw6fTcZv0N7yVIR-oSN5Op6XxJfLr0FGdIXEB9uM"/>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest">Featured</p>
+<p class="text-label-bold font-label-bold">Ignite V3 Pro</p>
+<p class="text-primary font-bold">$185.00</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Grid (Bento Style) -->
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-background">Explore Categories</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Engineered for every discipline.</p>
+</div>
+<a class="text-primary font-label-bold hover:underline" href="Busqueda-avanzada.html">View All Categories →</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-gutter h-[600px]">
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl bg-surface-container-highest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDq1rtfM0p5YL8CseGLUHSo6ysjK1EWcGRRkW201SeJJoj_f7J2QJqSNLVJPhUvLBIa7ckK17xLkBfCP2iDTq_lbjSqkANs4se1Y1dGpOrmlN6cmT8LG5nNRUf7CzKCNodp87b9Q5S1Tip7D3C2c2QwRSiJbp1meOPZdlOJrUfpaUc8wsJOlqa9gxibSEc82RInObQ-vKgAzy96dykk9f5CrLJhSp-vr-cKqS1zQ7nxE_ZyRxGL0vurhjKcc7Bmm3YMLXNOdXynDQ"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="text-headline-md font-headline-md text-white mb-2">Men</h3>
+<a class="bg-white text-on-background px-6 py-2 text-label-bold rounded-lg hover:bg-secondary-fixed transition-colors inline-flex items-center" href="cat_logo-tenis.html">Shop Now</a>
+</div>
+</div>
+<div class="md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-xl bg-surface-container-highest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo16I4wbZW8diZusVVlmBCAAlvYfDj3T_E5kbeWhlBOiFGJT90pJmfGCzMZx1dWp59_i8tncZ01I7eEqw2Ro-zj2ntNSdpPUS9fhx33CNQ1wLvNTQs4Gqx58h40rV1DB8nkn0zp0Ig9qmCV1XDqphGwOcpt3U9XzFKdr7vAAHFu36g2xIUrM8KA15ogFaLepHnmC8GgNzqopcBPVrNpNtDXsMZovOIsR4v5MyUzsPMy3_-ChK2MA10B72xQWfS-L2LbMzK6AHOdAo"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<h3 class="text-headline-md font-headline-md mb-2">Women</h3>
+<a class="bg-white text-on-background px-6 py-2 text-label-bold rounded-lg hover:bg-secondary-fixed transition-colors inline-flex items-center" href="cat_logo_completo_20_art_culos.html">Shop Now</a>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl kinetic-gradient">
+<div class="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
+<span class="material-symbols-outlined text-secondary-container text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h3 class="text-label-bold font-label-bold text-white uppercase tracking-tighter">Limited Drops</h3>
+<p class="text-on-primary-container text-[11px] mt-2">Exclusive collaborations and heritage re-issues.</p>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:opacity-80 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWaCcSMCvJn2Blvk3tIoJysECRqXpgOSpIKb1S8XDVYN2CN3RHaLrkFddMbpxcuC1Y9QY2DzMm6X-zmlUZdUzsM55uk2g963NJRGe5-K4T4r79Pik4wwtvZAibniz0_2ywFlAuXMhefij4PG_QLDwQoaxRs4jJ5iYFYFsoG-YboAzWoM8d48CevFisODJ9bvLCOQAwEjJ-jNFE5bM2aVXKaU5cSM0jfTSPF_omGWyY3jLB0Mpl5oWFp-IBOlGUmYO2jRbh6mQqkm0"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<h3 class="text-label-bold font-label-bold bg-white/90 px-4 py-2 rounded shadow-sm">Collections</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Expanded Product Catalog Section -->
+<section class="py-section-gap bg-surface-container-low" id="catalog">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-12">
+<h2 class="text-headline-lg font-headline-lg text-on-background">All Products</h2>
+<p class="text-body-md text-on-surface-variant mt-2">Browse our complete collection of elite performance footwear.</p>
+<!-- Large Prominent Search Bar -->
+<div class="mt-10 max-w-2xl mx-auto relative group">
+<span class="material-symbols-outlined absolute left-6 top-1/2 -translate-y-1/2 text-primary text-2xl">search</span>
+<input class="w-full pl-16 pr-6 py-5 bg-surface rounded-2xl border border-outline-variant shadow-sm focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all text-body-lg" placeholder="Search by name, category, or technology..." type="text"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 flex gap-2">
+<button class="p-2 hover:bg-surface-container rounded-lg text-outline-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+<div class="flex justify-center flex-wrap gap-3 mt-10">
+<button class="px-8 py-2.5 rounded-full bg-primary text-on-primary font-label-bold text-label-sm shadow-md">All</button>
+<button class="px-8 py-2.5 rounded-full bg-surface border border-outline-variant hover:border-primary hover:text-primary transition-all text-label-sm font-medium">Running</button>
+<button class="px-8 py-2.5 rounded-full bg-surface border border-outline-variant hover:border-primary hover:text-primary transition-all text-label-sm font-medium">Lifestyle</button>
+<button class="px-8 py-2.5 rounded-full bg-surface border border-outline-variant hover:border-primary hover:text-primary transition-all text-label-sm font-medium">Training</button>
+<button class="px-8 py-2.5 rounded-full bg-surface border border-outline-variant hover:border-primary hover:text-primary transition-all text-label-sm font-medium">Basketball</button>
+<button class="px-8 py-2.5 rounded-full bg-surface border border-outline-variant hover:border-primary hover:text-primary transition-all text-label-sm font-medium">Limited</button>
+</div>
+</div>
+<!-- Product Grid (20+ Items) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter">
+<!-- Row 1 -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5nsdwZWPINUdgPfGg-BAfm-WyyYgJxSfNj08PYEx280oSCdSQtGBmTIMzCVzNMrfCCEPZmJFfXyLQ3F3BxpeB5QBP9vWh6Q-6JhXM49uOU0M1K0V6Fjwe43Uqm3elkQPdVab-Hx0VYNscvHE7DHAZN3U_ztGmy7DfcDEVvPWwnhO_Zn8oOsGow1fBEONl0U8ofXrwxirsrRwzqlU0NOLoqJ53MR9mQBT137pNFtoryEXoDR6fIr311gAPrZ6aB3jvpBHKN0Y8YeQ"/>
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[10px] font-label-bold px-2 py-1 rounded">NEW</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Lifestyle</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Aero-Max Street 24</h3>
+<p class="text-primary font-bold text-lg mb-6">$160.00</p>
+<div class="mt-auto flex gap-2">
+<a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg hover:brightness-110 active:scale-95 transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a>
+<a class="p-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors group/btn flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle">
+<span class="material-symbols-outlined text-outline group-hover/btn:text-primary transition-colors">visibility</span>
+</a>
+</div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqgpWXR1vssr0KSNtK_6FvqZR6JfN-z8mO9qyjlwB3N7OSHhB3x01Nd11PuSEUZC3DOKGU_gL8HOwuSjMP85IhxO9K-t7g6A-_Ab29smAIOifNVgTpWAtw4b46cDy_LYQDy1EVu0ZfStE_V80W1qD4f6hcdd1S-2TWbj4I3yLH9qavS587YRdlNlfKouwQQplQr8LvwKs4nDea0rQQ6BQZd5cLmqNJw3mpEiust_a5UugBpYsUPh7RCqnXwP0b7gIkLok_KBnd10M"/>
+<div class="absolute top-4 left-4"><span class="bg-primary-container text-on-primary-container text-[10px] font-label-bold px-2 py-1 rounded">ELITE</span></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Performance</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Neon Sprint Pro</h3>
+<p class="text-primary font-bold text-lg mb-6">$210.00</p>
+<div class="mt-auto flex gap-2">
+<a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg hover:brightness-110 active:scale-95 transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a>
+<a class="p-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors group/btn flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle">
+<span class="material-symbols-outlined text-outline group-hover/btn:text-primary transition-colors">visibility</span>
+</a>
+</div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCumjeLvLMVpotAsvpx9JPL73Lbt-J9psPYrGS8_pCBKtnmVqIxCdwQtSuU4Pb3q5yoSzRz8bxFoWwAI2I7MzYB-VAnJj5-7kXXOP6Q2ykRwlvaF4YK2ZFDSqAMbDG6Ie4t_IvPAnINv2luBAROLIa688juS5aiV5HjW0q6P9YlN89ejaXiqV4SqYY6pOgi7sFaOW5p-CiEDZ14lwGMYgdExY6z7LN5eemAvLLD7IehyuROnas2YFGILnpSRoNsSC2e2i5T7Ip6dpE"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Heritage</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Classic Suede Flux</h3>
+<p class="text-primary font-bold text-lg mb-6">$135.00</p>
+<div class="mt-auto flex gap-2">
+<a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg hover:brightness-110 active:scale-95 transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a>
+<a class="p-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors group/btn flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle">
+<span class="material-symbols-outlined text-outline group-hover/btn:text-primary transition-colors">visibility</span>
+</a>
+</div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW3Xu0-QVhBPXOVkmhSo-EY2gZk3R_ck9FQ5xur35LLIBh8CfDflK0P7hKWedsD0IgiU1ximb7gHvCg3_IDxONpBYMuZM4vaQFaWabxxoQOfVApMsoYphjFuESQRS4U21dzovQdH5IqUufg8qp3vuo6OHGg3oDEHU5cK7s_FWOMOAL-PG-kRQxKUTxG5Uw7Q_BkX_2aBL1KZ9KuKnvMYCdF3rbcmWYhGW0qsJHotF31N-bseY5bOheSYSTGgA_YuFbEezfertB3r8"/>
+<div class="absolute top-4 left-4"><span class="bg-error text-on-error text-[10px] font-label-bold px-2 py-1 rounded">HOT</span></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Lifestyle</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Mono Pure 1.0</h3>
+<p class="text-primary font-bold text-lg mb-6">$150.00</p>
+<div class="mt-auto flex gap-2">
+<a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg hover:brightness-110 active:scale-95 transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a>
+<a class="p-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors group/btn flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle">
+<span class="material-symbols-outlined text-outline group-hover/btn:text-primary transition-colors">visibility</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Placeholder Items for 20+ requirement (Reusing/Repeating styles) -->
+<!-- Row 2 (Items 5-8) -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4IRTQKJyx-8Xa_pqJNJkMWJIAq-jyum-y9Q9nTcdZo1VkbZ1M15t1gQR9WFFOxA_zEuaX-GoPNDTA0wan-vV1vN-gK5-EzR8wILUHwTF3QLmuTs-HmyR-H2LRMNtUi0NrtFoT9viO3ZVClY0ejH6OZOIdk2wBUJ7LsQNuAnMXABPw2DJrJEVUoJohWVIYRzATAIAJowcll4AXP0gzvCX8TtKBm3ZuKs1IUtQYw6fTcZv0N7yVIR-oSN5Op6XxJfLr0FGdIXEB9uM"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Training</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Ignite V3 Pro</h3>
+<p class="text-primary font-bold text-lg mb-6">$185.00</p>
+<div class="mt-auto flex gap-2">
+<a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg hover:brightness-110 transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a>
+<a class="p-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle"><span class="material-symbols-outlined text-outline">visibility</span></a>
+</div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_E-3Z8D2-z6B8n-vK9m4e_Q1oD-iZl1z-XyR9lC3uO7eYqXfGvH8w5f9o_Z8vL6pQ1z8x-c4u7eYqXfGvH8w5f9o_Z8vL6pQ1z8x-c4"/>
+<div class="absolute top-4 left-4"><span class="bg-secondary text-on-secondary text-[10px] font-label-bold px-2 py-1 rounded">TRENDING</span></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Running</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Velocity X-200</h3>
+<p class="text-primary font-bold text-lg mb-6">$195.00</p>
+<div class="mt-auto flex gap-2"><a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a><a class="p-3 border border-outline-variant rounded-lg transition-colors flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle"><span class="material-symbols-outlined text-outline">visibility</span></a></div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDq1rtfM0p5YL8CseGLUHSo6ysjK1EWcGRRkW201SeJJoj_f7J2QJqSNLVJPhUvLBIa7ckK17xLkBfCP2iDTq_lbjSqkANs4se1Y1dGpOrmlN6cmT8LG5nNRUf7CzKCNodp87b9Q5S1Tip7D3C2c2QwRSiJbp1meOPZdlOJrUfpaUc8wsJOlqa9gxibSEc82RInObQ-vKgAzy96dykk9f5CrLJhSp-vr-cKqS1zQ7nxE_ZyRxGL0vurhjKcc7Bmm3YMLXNOdXynDQ"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Training</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Apex Stealth VIII</h3>
+<p class="text-primary font-bold text-lg mb-6">$145.00</p>
+<div class="mt-auto flex gap-2"><a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a><a class="p-3 border border-outline-variant rounded-lg transition-colors flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle"><span class="material-symbols-outlined text-outline">visibility</span></a></div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo16I4wbZW8diZusVVlmBCAAlvYfDj3T_E5kbeWhlBOiFGJT90pJmfGCzMZx1dWp59_i8tncZ01I7eEqw2Ro-zj2ntNSdpPUS9fhx33CNQ1wLvNTQs4Gqx58h40rV1DB8nkn0zp0Ig9qmCV1XDqphGwOcpt3U9XzFKdr7vAAHFu36g2xIUrM8KA15ogFaLepHnmC8GgNzqopcBPVrNpNtDXsMZovOIsR4v5MyUzsPMy3_-ChK2MA10B72xQWfS-L2LbMzK6AHOdAo"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Lifestyle</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Cloud Walk 10</h3>
+<p class="text-primary font-bold text-lg mb-6">$120.00</p>
+<div class="mt-auto flex gap-2"><a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a><a class="p-3 border border-outline-variant rounded-lg transition-colors flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle"><span class="material-symbols-outlined text-outline">visibility</span></a></div>
+</div>
+</div>
+<!-- Row 3 (Items 9-12) -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQJmVoiQ95K9FU87Mkyab9BjuXgzHty3CLFi9iAdj_aW3t2Fcp0o-78TiNnbo-GEsfrAbDHec0_ghX7RIJfpkTMjDm8mt5fRzoPJMwUp9YYqv5j4ERog_gDOsy7rwV24xxujBgwgqq6_IOWgYdOrWJ-DjP8AF5N17dTlx_9zhF5RdbudLvmtpYvSGgvwo_CIy62byTj0CfexFqOKxGpO_CaHK-M3Ng_Xhefd4f0ju2bEw-Jw3KcRTq_0u8uS3v0p8fyBtGqnKaJzI"/>
+<div class="absolute top-4 left-4"><span class="bg-primary text-on-primary text-[10px] font-label-bold px-2 py-1 rounded">LIMITED</span></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Tech</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Kinetic Origin SE</h3>
+<p class="text-primary font-bold text-lg mb-6">$250.00</p>
+<div class="mt-auto flex gap-2"><a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a><a class="p-3 border border-outline-variant rounded-lg transition-colors flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle"><span class="material-symbols-outlined text-outline">visibility</span></a></div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4IRTQKJyx-8Xa_pqJNJkMWJIAq-jyum-y9Q9nTcdZo1VkbZ1M15t1gQR9WFFOxA_zEuaX-GoPNDTA0wan-vV1vN-gK5-EzR8wILUHwTF3QLmuTs-HmyR-H2LRMNtUi0NrtFoT9viO3ZVClY0ejH6OZOIdk2wBUJ7LsQNuAnMXABPw2DJrJEVUoJohWVIYRzATAIAJowcll4AXP0gzvCX8TtKBm3ZuKs1IUtQYw6fTcZv0N7yVIR-oSN5Op6XxJfLr0FGdIXEB9uM"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Basketball</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Gravity Spike Low</h3>
+<p class="text-primary font-bold text-lg mb-6">$170.00</p>
+<div class="mt-auto flex gap-2"><a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a><a class="p-3 border border-outline-variant rounded-lg transition-colors flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle"><span class="material-symbols-outlined text-outline">visibility</span></a></div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWaCcSMCvJn2Blvk3tIoJysECRqXpgOSpIKb1S8XDVYN2CN3RHaLrkFddMbpxcuC1Y9QY2DzMm6X-zmlUZdUzsM55uk2g963NJRGe5-K4T4r79Pik4wwtvZAibniz0_2ywFlAuXMhefij4PG_QLDwQoaxRs4jJ5iYFYFsoG-YboAzWoM8d48CevFisODJ9bvLCOQAwEjJ-jNFE5bM2aVXKaU5cSM0jfTSPF_omGWyY3jLB0Mpl5oWFp-IBOlGUmYO2jRbh6mQqkm0"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Indoor</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Court Grip Elite</h3>
+<p class="text-primary font-bold text-lg mb-6">$130.00</p>
+<div class="mt-auto flex gap-2"><a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a><a class="p-3 border border-outline-variant rounded-lg transition-colors flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle"><span class="material-symbols-outlined text-outline">visibility</span></a></div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5nsdwZWPINUdgPfGg-BAfm-WyyYgJxSfNj08PYEx280oSCdSQtGBmTIMzCVzNMrfCCEPZmJFfXyLQ3F3BxpeB5QBP9vWh6Q-6JhXM49uOU0M1K0V6Fjwe43Uqm3elkQPdVab-Hx0VYNscvHE7DHAZN3U_ztGmy7DfcDEVvPWwnhO_Zn8oOsGow1fBEONl0U8ofXrwxirsrRwzqlU0NOLoqJ53MR9mQBT137pNFtoryEXoDR6fIr311gAPrZ6aB3jvpBHKN0Y8YeQ"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Running</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Pace Maker Prime</h3>
+<p class="text-primary font-bold text-lg mb-6">$180.00</p>
+<div class="mt-auto flex gap-2"><a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a><a class="p-3 border border-outline-variant rounded-lg transition-colors flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle"><span class="material-symbols-outlined text-outline">visibility</span></a></div>
+</div>
+</div>
+<!-- Row 4-5 (Items 13-20) - Repeated placeholders to reach 20 -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqgpWXR1vssr0KSNtK_6FvqZR6JfN-z8mO9qyjlwB3N7OSHhB3x01Nd11PuSEUZC3DOKGU_gL8HOwuSjMP85IhxO9K-t7g6A-_Ab29smAIOifNVgTpWAtw4b46cDy_LYQDy1EVu0ZfStE_V80W1qD4f6hcdd1S-2TWbj4I3yLH9qavS587YRdlNlfKouwQQplQr8LvwKs4nDea0rQQ6BQZd5cLmqNJw3mpEiust_a5UugBpYsUPh7RCqnXwP0b7gIkLok_KBnd10M"/></div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Performance</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Drift V2 Core</h3>
+<p class="text-primary font-bold text-lg mb-6">$155.00</p>
+<div class="mt-auto flex gap-2"><a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a><a class="p-3 border border-outline-variant rounded-lg transition-colors flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle"><span class="material-symbols-outlined text-outline">visibility</span></a></div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCumjeLvLMVpotAsvpx9JPL73Lbt-J9psPYrGS8_pCBKtnmVqIxCdwQtSuU4Pb3q5yoSzRz8bxFoWwAI2I7MzYB-VAnJj5-7kXXOP6Q2ykRwlvaF4YK2ZFDSqAMbDG6Ie4t_IvPAnINv2luBAROLIa688juS5aiV5HjW0q6P9YlN89ejaXiqV4SqYY6pOgi7sFaOW5p-CiEDZ14lwGMYgdExY6z7LN5eemAvLLD7IehyuROnas2YFGILnpSRoNsSC2e2i5T7Ip6dpE"/></div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Lifestyle</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Vintage Suede Gold</h3>
+<p class="text-primary font-bold text-lg mb-6">$140.00</p>
+<div class="mt-auto flex gap-2"><a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a><a class="p-3 border border-outline-variant rounded-lg transition-colors flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle"><span class="material-symbols-outlined text-outline">visibility</span></a></div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW3Xu0-QVhBPXOVkmhSo-EY2gZk3R_ck9FQ5xur35LLIBh8CfDflK0P7hKWedsD0IgiU1ximb7gHvCg3_IDxONpBYMuZM4vaQFaWabxxoQOfVApMsoYphjFuESQRS4U21dzovQdH5IqUufg8qp3vuo6OHGg3oDEHU5cK7s_FWOMOAL-PG-kRQxKUTxG5Uw7Q_BkX_2aBL1KZ9KuKnvMYCdF3rbcmWYhGW0qsJHotF31N-bseY5bOheSYSTGgA_YuFbEezfertB3r8"/></div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Lifestyle</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Summit White 2.0</h3>
+<p class="text-primary font-bold text-lg mb-6">$165.00</p>
+<div class="mt-auto flex gap-2"><a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a><a class="p-3 border border-outline-variant rounded-lg transition-colors flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle"><span class="material-symbols-outlined text-outline">visibility</span></a></div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDq1rtfM0p5YL8CseGLUHSo6ysjK1EWcGRRkW201SeJJoj_f7J2QJqSNLVJPhUvLBIa7ckK17xLkBfCP2iDTq_lbjSqkANs4se1Y1dGpOrmlN6cmT8LG5nNRUf7CzKCNodp87b9Q5S1Tip7D3C2c2QwRSiJbp1meOPZdlOJrUfpaUc8wsJOlqa9gxibSEc82RInObQ-vKgAzy96dykk9f5CrLJhSp-vr-cKqS1zQ7nxE_ZyRxGL0vurhjKcc7Bmm3YMLXNOdXynDQ"/></div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="text-[11px] font-label-bold text-outline uppercase tracking-wider mb-1">Training</p>
+<h3 class="text-label-bold font-label-bold text-on-surface mb-2">Core Cross X</h3>
+<p class="text-primary font-bold text-lg mb-6">$135.00</p>
+<div class="mt-auto flex gap-2"><a class="flex-grow py-3 bg-primary text-on-primary text-label-sm font-label-bold rounded-lg transition-all flex items-center justify-center" href="carrito_de_compras.html">Add to Cart</a><a class="p-3 border border-outline-variant rounded-lg transition-colors flex items-center justify-center" href="Detalle-producto.html" aria-label="Ver detalle"><span class="material-symbols-outlined text-outline">visibility</span></a></div>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,71,255,0.08)] hover:shadow-[0_20px_40px_rgba(0,71,255,0.12)] transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden"></div></div></div></div></section></main></body></html>

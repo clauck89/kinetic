@@ -1,0 +1,368 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Your Cart | KINETIC ATHLETICS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f3f0f4",
+                    "on-secondary-container": "#546b00",
+                    "surface-container-high": "#eae7eb",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#c1f100",
+                    "on-primary-fixed-variant": "#0033c0",
+                    "surface": "#fbf8fc",
+                    "secondary": "#506600",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "inverse-surface": "#303033",
+                    "on-background": "#1b1b1e",
+                    "on-secondary-fixed": "#161e00",
+                    "surface-container-highest": "#e4e1e6",
+                    "outline": "#747688",
+                    "on-primary-container": "#d4d9ff",
+                    "on-surface": "#1b1b1e",
+                    "secondary-fixed": "#c3f400",
+                    "surface-bright": "#fbf8fc",
+                    "tertiary-fixed": "#e2e2e3",
+                    "on-surface-variant": "#434657",
+                    "primary": "#0035c5",
+                    "surface-dim": "#dcd9dd",
+                    "on-tertiary-fixed-variant": "#454748",
+                    "outline-variant": "#c4c5da",
+                    "primary-fixed-dim": "#b9c3ff",
+                    "primary-fixed": "#dde1ff",
+                    "on-tertiary-fixed": "#1a1c1d",
+                    "surface-tint": "#0046fa",
+                    "on-primary-fixed": "#001257",
+                    "error": "#ba1a1a",
+                    "background": "#fbf8fc",
+                    "surface-container": "#f0edf1",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#dbdbdc",
+                    "on-secondary-fixed-variant": "#3c4d00",
+                    "surface-container-low": "#f6f2f7",
+                    "secondary-fixed-dim": "#abd600",
+                    "tertiary-container": "#5f6061",
+                    "inverse-primary": "#b9c3ff",
+                    "primary-container": "#0047ff",
+                    "surface-variant": "#e4e1e6",
+                    "tertiary": "#47484a",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "8px",
+                    "section-gap": "80px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .cart-item-hover:hover .remove-btn {
+            opacity: 1;
+        }
+        body {
+            background-color: #fbf8fc;
+            color: #1b1b1e;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 shadow-[0_4px_16px_rgba(0,71,255,0.08)] bg-surface dark:bg-surface">
+<div class="flex justify-between items-center w-full px-margin-desktop py-base max-w-container-max mx-auto h-20">
+<a class="text-headline-md font-headline-md font-extrabold text-primary dark:text-inverse-primary tracking-tighter italic hover:opacity-90 transition-opacity" href="cat_logo-tenis.html">KINETIC</a>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-outline-variant font-medium pb-1 hover:text-primary transition-colors duration-200" href="cat_logo-tenis.html">Men</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium pb-1 hover:text-primary transition-colors duration-200" href="cat_logo_completo_20_art_culos.html">Women</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium pb-1 hover:text-primary transition-colors duration-200" href="Busqueda-avanzada.html">Collections</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium pb-1 hover:text-primary transition-colors duration-200" href="Login.html">Admin</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-6">
+<a class="relative hover:text-primary transition-colors duration-200 active:scale-95 transition-transform text-primary dark:text-inverse-primary border-b-2 border-secondary pb-1" href="carrito_de_compras.html" aria-label="Carrito de compras">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">3</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform" href="Login.html" aria-label="Iniciar sesión">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="flex flex-col gap-gutter">
+<!-- Header -->
+<div class="flex flex-col gap-2">
+<h1 class="font-headline-lg text-headline-lg md:font-headline-xl md:text-headline-xl uppercase">Your Gear</h1>
+<p class="text-on-surface-variant">3 Items in your kinetic pack</p>
+</div>
+<!-- Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Cart Items List -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Item 1 -->
+<div class="cart-item-hover group relative flex flex-col sm:flex-row gap-6 p-6 bg-surface-container-lowest rounded-xl shadow-[0_4px_16px_rgba(0,71,255,0.08)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,71,255,0.12)]">
+<div class="w-full sm:w-48 aspect-square overflow-hidden rounded-lg bg-[#F4F4F5]">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A professional studio product shot of a high-performance red running sneaker positioned dynamically against a neutral grey background. The lighting is crisp and high-contrast, highlighting the intricate mesh textures and sleek aerodynamic design. The vibrant electric blue and white UI elements are reflected in the clean aesthetic of the footwear. The mood is energetic, high-octane, and premium athletic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4ZtUpMvORv8SsQmX5LUzO24z9O_AVDW4kqQkBcAgpRcHJX6jUyx2NvnnAWvXAyYfDdCaR1G4_V08FACgVjXtf1k8a7A5q1xTmJCpDqqyokkoPuSibdOBf5ZOhgwRI2oeayyS3x_zon15bKNj5KUqTm3TTG7f04BSdbjnpdkbO7eAFjMVE9kaiGf8H5g8XT9C2XO-m9Wuo3Z8ByiKUAG2OJ48VyCl37NWegsxt-12DBo5otLltIHavRJ41yvcAhoO_v9Vpnh9Wh58">
+</div>
+<div class="flex-grow flex flex-col justify-between py-2">
+<div class="flex justify-between items-start">
+<div>
+<span class="inline-block px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-bold rounded-sm mb-2 uppercase">New Arrival</span>
+<h3 class="font-headline-md text-headline-md">VELOCITY ELITE X1</h3>
+<p class="text-on-surface-variant font-body-md">Men's Road Running Shoe</p>
+</div>
+<span class="font-headline-md text-primary">$180.00</span>
+</div>
+<div class="mt-4 flex flex-wrap items-center gap-6">
+<div class="flex flex-col gap-1">
+<span class="text-label-sm font-label-bold text-outline uppercase tracking-wider">Size</span>
+<div class="px-4 py-2 border border-outline-variant rounded-lg font-bold">US 10.5</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-label-sm font-label-bold text-outline uppercase tracking-wider">Quantity</span>
+<div class="flex items-center border border-outline-variant rounded-lg h-10">
+<button class="px-3 hover:text-primary transition-colors h-full flex items-center"><span class="material-symbols-outlined text-[18px]">remove</span></button>
+<span class="px-2 font-bold min-w-[24px] text-center">1</span>
+<button class="px-3 hover:text-primary transition-colors h-full flex items-center"><span class="material-symbols-outlined text-[18px]">add</span></button>
+</div>
+</div>
+</div>
+<button class="remove-btn sm:absolute top-6 right-6 flex items-center gap-1 text-error hover:scale-105 transition-transform sm:opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+<span class="text-label-bold uppercase">Remove</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="cart-item-hover group relative flex flex-col sm:flex-row gap-6 p-6 bg-surface-container-lowest rounded-xl shadow-[0_4px_16px_rgba(0,71,255,0.08)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,71,255,0.12)]">
+<div class="w-full sm:w-48 aspect-square overflow-hidden rounded-lg bg-[#F4F4F5]">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A premium lime green athletic sneaker presented in a sleek, minimalist studio environment with high-key lighting. The shoe features a technical silhouette with layered synthetic materials and a bold electric blue midsole accent. The atmosphere is sporty-luxe, utilizing sharp shadows and a clean composition to emphasize professional performance gear. The background is a soft, non-distracting off-white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHyba-0AbElaDPRg00UTM4VL0hzG-T8cQWcu4QwRv94XLXaj6K9BH-S2HBDE5gvcPlUeCP3cDwK0rPX5ZUUV2HofZKynuabUQL_jdn0QL_bXfU1BEGtkiunxq_tDaRWRnsS7AAa0T_yPN1OKs6IKfKlN_Uwo7e5V2cJAc4er4Zojdp2QI6mu3aexCG0D93SPtn128sZ7eGXT4lkMYbp7hsb_iuJREcTYceg3xavysGIb8D-quI8TlBZHvBpbSqERwURzD37cGr7rE">
+</div>
+<div class="flex-grow flex flex-col justify-between py-2">
+<div class="flex justify-between items-start">
+<div>
+<span class="inline-block px-2 py-0.5 bg-primary text-white text-label-sm font-label-bold rounded-sm mb-2 uppercase">Limited Edition</span>
+<h3 class="font-headline-md text-headline-md">STRIKE-FORCE LIME</h3>
+<p class="text-on-surface-variant font-body-md">Cross-Training Athletics</p>
+</div>
+<span class="font-headline-md text-primary">$155.00</span>
+</div>
+<div class="mt-4 flex flex-wrap items-center gap-6">
+<div class="flex flex-col gap-1">
+<span class="text-label-sm font-label-bold text-outline uppercase tracking-wider">Size</span>
+<div class="px-4 py-2 border border-outline-variant rounded-lg font-bold">US 9.0</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-label-sm font-label-bold text-outline uppercase tracking-wider">Quantity</span>
+<div class="flex items-center border border-outline-variant rounded-lg h-10">
+<button class="px-3 hover:text-primary transition-colors h-full flex items-center"><span class="material-symbols-outlined text-[18px]">remove</span></button>
+<span class="px-2 font-bold min-w-[24px] text-center">1</span>
+<button class="px-3 hover:text-primary transition-colors h-full flex items-center"><span class="material-symbols-outlined text-[18px]">add</span></button>
+</div>
+</div>
+</div>
+<button class="remove-btn sm:absolute top-6 right-6 flex items-center gap-1 text-error hover:scale-105 transition-transform sm:opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+<span class="text-label-bold uppercase">Remove</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="cart-item-hover group relative flex flex-col sm:flex-row gap-6 p-6 bg-surface-container-lowest rounded-xl shadow-[0_4px_16px_rgba(0,71,255,0.08)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,71,255,0.12)]">
+<div class="w-full sm:w-48 aspect-square overflow-hidden rounded-lg bg-[#F4F4F5]">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="Modern white and violet fashion sneakers captured in a high-fashion editorial style. The footwear sits on a clean, light-grey podium under bright, diffused studio lights. The design emphasizes chunky silhouettes and high-quality materials. Vibrant electric blue accents within the sneaker design pop against the pristine white mesh, creating a futuristic and premium sporty-luxe aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwjnjhcisLO2kX2lKZ52iPZVyqbCS79NulKybG2A_3cQ1dEGR7Hszmo6oo75cFxnEnMDcU9HbjL_HWR5a8toy7NlQjsBtkA0X_JUVOfk4g4NmWwBDidGEwuCjrRROql1DngBlXCQgjHHOsAnJcCDk-umxOnMfvLkd5VuOztdwmwA5ma4srGn_AVQmhONORfH0GDh2YCT2BWTTgvgh10eSSt9hIEEsUhwvPyOHw41KPCppRb02db666_aDH_FzL61AwXe9F2Eft0Ms">
+</div>
+<div class="flex-grow flex flex-col justify-between py-2">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md">CHRONOS VIOLET</h3>
+<p class="text-on-surface-variant font-body-md">Lifestyle / Streetwear</p>
+</div>
+<span class="font-headline-md text-primary">$130.00</span>
+</div>
+<div class="mt-4 flex flex-wrap items-center gap-6">
+<div class="flex flex-col gap-1">
+<span class="text-label-sm font-label-bold text-outline uppercase tracking-wider">Size</span>
+<div class="px-4 py-2 border border-outline-variant rounded-lg font-bold">US 11.0</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-label-sm font-label-bold text-outline uppercase tracking-wider">Quantity</span>
+<div class="flex items-center border border-outline-variant rounded-lg h-10">
+<button class="px-3 hover:text-primary transition-colors h-full flex items-center"><span class="material-symbols-outlined text-[18px]">remove</span></button>
+<span class="px-2 font-bold min-w-[24px] text-center">1</span>
+<button class="px-3 hover:text-primary transition-colors h-full flex items-center"><span class="material-symbols-outlined text-[18px]">add</span></button>
+</div>
+</div>
+</div>
+<button class="remove-btn sm:absolute top-6 right-6 flex items-center gap-1 text-error hover:scale-105 transition-transform sm:opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+<span class="text-label-bold uppercase">Remove</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Summary Sidebar -->
+<aside class="lg:col-span-4 sticky top-32">
+<div class="bg-surface-container-low p-8 rounded-xl shadow-[0_4px_16px_rgba(0,71,255,0.08)] border border-white/40">
+<h2 class="font-headline-md text-headline-md uppercase mb-8 border-b-2 border-primary w-fit pr-4">Order Summary</h2>
+<div class="flex flex-col gap-4 mb-8">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Subtotal</span>
+<span class="font-bold text-on-surface">$465.00</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Shipping &amp; Handling</span>
+<span class="font-bold text-on-surface">FREE</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Estimated Taxes</span>
+<span class="font-bold text-on-surface">$38.45</span>
+</div>
+</div>
+<div class="h-px bg-outline-variant mb-6"></div>
+<div class="flex justify-between items-center mb-10">
+<span class="font-headline-md text-headline-md">TOTAL</span>
+<span class="font-headline-md text-headline-md text-primary">$503.45</span>
+</div>
+<div class="flex flex-col gap-4">
+<button class="group relative overflow-hidden w-full bg-primary text-on-primary py-5 rounded-lg font-headline-md uppercase tracking-widest active:scale-[0.98] transition-all">
+<span class="relative z-10">Secure Checkout</span>
+<div class="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-10 transition-opacity"></div>
+<div class="absolute inset-0 border-2 border-transparent group-hover:border-secondary-container transition-all"></div>
+</button>
+<a class="w-full py-4 border border-outline-variant hover:bg-surface-container-highest transition-colors rounded-lg font-label-bold uppercase tracking-widest flex items-center justify-center" href="cat_logo-tenis.html">
+                                Continue Shopping
+                            </a>
+</div>
+<!-- Payment Methods -->
+<div class="mt-10">
+<p class="text-label-sm font-label-bold text-outline uppercase tracking-widest text-center mb-4">Accepted Payments</p>
+<div class="flex justify-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-3xl">credit_card</span>
+<span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+<span class="material-symbols-outlined text-3xl">universal_currency_alt</span>
+</div>
+</div>
+</div>
+<!-- Promo Code -->
+<div class="mt-gutter p-6 bg-surface-container-lowest rounded-xl shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<label class="block text-label-bold uppercase mb-3" for="promo">Promo Code</label>
+<div class="flex gap-2">
+<input class="flex-grow bg-surface border border-outline-variant px-4 py-2 rounded-lg focus:outline-none focus:border-primary" id="promo" placeholder="Enter code" type="text">
+<button class="px-6 py-2 bg-on-surface text-surface font-label-bold rounded-lg hover:bg-primary transition-colors">Apply</button>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface mt-section-gap">
+<div class="w-full px-margin-desktop py-section-gap max-w-container-max mx-auto flex flex-col md:flex-row justify-between gap-gutter">
+<div class="flex flex-col gap-6 max-w-sm">
+<a class="text-headline-md font-headline-md font-extrabold text-primary dark:text-inverse-primary hover:opacity-90 transition-opacity" href="cat_logo-tenis.html">KINETIC ATHLETICS</a>
+<p class="text-on-surface-variant font-body-md italic leading-relaxed">Pioneering the future of athletic motion. We combine high-fashion aesthetics with championship-winning technology.</p>
+<div class="flex gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant hover:border-primary transition-colors"><span class="material-symbols-outlined">share</span></button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant hover:border-primary transition-colors"><span class="material-symbols-outlined">public</span></button>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-gutter">
+<div class="flex flex-col gap-4">
+<span class="text-label-bold uppercase tracking-widest text-on-surface">Company</span>
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary transition-colors duration-300" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary transition-colors duration-300" href="#">Sustainability</a>
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary transition-colors duration-300" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-label-bold uppercase tracking-widest text-on-surface">Support</span>
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary transition-colors duration-300" href="#">Returns</a>
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary transition-colors duration-300" href="#">Size Guide</a>
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-label-bold uppercase tracking-widest text-on-surface">Legal</span>
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary transition-colors duration-300" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<div class="w-full px-margin-desktop py-8 border-t border-outline-variant/20 flex justify-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">© 2024 KINETIC ATHLETICS. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Hover effect for product cards
+        const cartItems = document.querySelectorAll('.cart-item-hover');
+        cartItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-2px)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

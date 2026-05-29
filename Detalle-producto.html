@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Volt Runner X1 | KINETIC ATHLETICS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "outline": "#747688",
+                  "on-surface": "#1b1b1e",
+                  "on-primary-container": "#d4d9ff",
+                  "surface-container-highest": "#e4e1e6",
+                  "on-secondary-fixed": "#161e00",
+                  "on-background": "#1b1b1e",
+                  "tertiary-fixed-dim": "#c6c6c7",
+                  "inverse-surface": "#303033",
+                  "secondary-container": "#c1f100",
+                  "on-primary-fixed-variant": "#0033c0",
+                  "on-secondary": "#ffffff",
+                  "secondary": "#506600",
+                  "surface": "#fbf8fc",
+                  "on-primary": "#ffffff",
+                  "on-error": "#ffffff",
+                  "surface-container-high": "#eae7eb",
+                  "on-tertiary": "#ffffff",
+                  "on-error-container": "#93000a",
+                  "on-secondary-container": "#546b00",
+                  "inverse-on-surface": "#f3f0f4",
+                  "inverse-primary": "#b9c3ff",
+                  "tertiary": "#47484a",
+                  "error-container": "#ffdad6",
+                  "surface-variant": "#e4e1e6",
+                  "primary-container": "#0047ff",
+                  "tertiary-container": "#5f6061",
+                  "secondary-fixed-dim": "#abd600",
+                  "surface-container-lowest": "#ffffff",
+                  "on-tertiary-container": "#dbdbdc",
+                  "on-secondary-fixed-variant": "#3c4d00",
+                  "surface-container-low": "#f6f2f7",
+                  "error": "#ba1a1a",
+                  "background": "#fbf8fc",
+                  "on-primary-fixed": "#001257",
+                  "surface-container": "#f0edf1",
+                  "surface-tint": "#0046fa",
+                  "primary-fixed": "#dde1ff",
+                  "on-tertiary-fixed": "#1a1c1d",
+                  "on-tertiary-fixed-variant": "#454748",
+                  "primary-fixed-dim": "#b9c3ff",
+                  "outline-variant": "#c4c5da",
+                  "surface-dim": "#dcd9dd",
+                  "primary": "#0035c5",
+                  "tertiary-fixed": "#e2e2e3",
+                  "on-surface-variant": "#434657",
+                  "secondary-fixed": "#c3f400",
+                  "surface-bright": "#fbf8fc"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "margin-desktop": "40px",
+                  "container-max": "1280px",
+                  "section-gap": "80px",
+                  "margin-mobile": "16px",
+                  "gutter": "24px",
+                  "base": "8px"
+          },
+          "fontFamily": {
+                  "headline-lg": ["Montserrat"],
+                  "headline-xl": ["Montserrat"],
+                  "headline-lg-mobile": ["Montserrat"],
+                  "body-md": ["Inter"],
+                  "body-lg": ["Inter"],
+                  "headline-md": ["Montserrat"],
+                  "label-sm": ["Inter"],
+                  "label-bold": ["Inter"]
+          },
+          "fontSize": {
+                  "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                  "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                  "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                  "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                  "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                  "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c4c5da;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<header class="docked full-width top-0 z-50 shadow-[0_4px_16px_rgba(0,71,255,0.08)] bg-surface">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-base max-w-container-max mx-auto">
+<div class="flex items-center gap-12">
+<a class="text-headline-md font-headline-md font-extrabold text-primary tracking-tighter italic" href="cat_logo-tenis.html">KINETIC</a>
+<div class="hidden md:flex gap-8">
+<a class="text-primary border-b-2 border-secondary pb-1 text-label-bold font-label-bold hover:text-primary transition-colors duration-200" href="cat_logo-tenis.html">Men</a>
+<a class="text-on-surface-variant font-medium pb-1 text-label-bold font-label-bold hover:text-primary transition-colors duration-200" href="cat_logo_completo_20_art_culos.html">Women</a>
+<a class="text-on-surface-variant font-medium pb-1 text-label-bold font-label-bold hover:text-primary transition-colors duration-200" href="Busqueda-avanzada.html">Collections</a>
+<a class="text-on-surface-variant font-medium pb-1 text-label-bold font-label-bold hover:text-primary transition-colors duration-200" href="Login.html">Admin</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<a class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant hover:border-primary transition-all" href="Busqueda-avanzada.html">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-bold ml-2 w-48 pointer-events-none" placeholder="Find your speed..." type="text" readonly/>
+</a>
+<a class="relative hover:scale-105 transition-transform inline-flex" href="carrito_de_compras.html" aria-label="Carrito de compras">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-secondary text-on-secondary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</a>
+<a class="hover:scale-105 transition-transform inline-flex" href="Login.html" aria-label="Iniciar sesión">
+<span class="material-symbols-outlined text-primary" data-icon="account_circle">account_circle</span>
+</a>
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-16">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-8 text-label-sm font-label-sm text-outline">
+<a class="hover:text-primary" href="cat_logo-tenis.html">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="Busqueda-avanzada.html">Performance Footwear</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-bold">Volt Runner X1</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-12">
+<!-- Image Gallery Cluster (Bento-style) -->
+<div class="lg:col-span-7 grid grid-cols-2 gap-4">
+<div class="col-span-2 aspect-[4/3] rounded-xl overflow-hidden bg-surface-container-low shadow-sm group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-performance running shoe, the Volt Runner X1, captured in a professional studio setting with a clean light grey background. The shoe is electric blue with neon lime accents, featuring a sleek, aerodynamic silhouette and a textured carbon fiber sole. The lighting is sharp and high-contrast, emphasizing the premium materials and technical mesh upper. The overall mood is high-octane and sporty-luxe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm16O23ctymG8FImnRlJCXovvV6X1pcHgevEgxtGQVgTA097zC_SDVQw6_QNceJF1kgYj9Uth59-gVazR2qs_-p9EYBaEwobpmhmuqbGTJWlH_FyP-f4UlcGENS7wH_96VCEy7C-OpQZd6Fp0P5N_gkCBNGQSmvHzrHg1aTCB8M9zN2zAMsa026CiUZDc9oFwE5WfFLpvdf4-aVaB3_jPbN-TBd80A3nN5pM6oF3zXKpnzkWbVDOn1UEi8DYFIpKKgRnp8uxl75aw"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container-low shadow-sm group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Macro close-up shot of the Volt Runner X1 sneaker's heel section, highlighting the translucent cushioning unit and the reinforced support structure. The color palette is dominated by electric blue and metallic silver, set against a pristine white studio floor. The shot uses a shallow depth of field to create a luxurious, technical feel. Professional sports advertising photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHbntnXbgZaSmo9uy22By3AhNfQD8J69Baeh8wcqmmyccHlciIErdNc2_Qlv75ueVACQ7dtzByp6gE3jJ7X5RcJal4LpQmAndfUbqLb1-zCBJnpZ0Vr4rJUZhePB-3R2T57SJyuRh9zgU9FPy71o1XrQTNx7Yjzw7Rbq0Ubok2vU8WMWIWokZ_qxu4lRwSyfowTAf8jEbzB9u4JlEim9Hgo63jG-j1O2G1l9-nNdKLkdh6ekdSZcXRbJpbRuBEE6Zf92r9ni9Giy8"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container-low shadow-sm group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Top-down view of the Volt Runner X1 performance shoe, showcasing the precision-engineered lacing system and the breathable engineered mesh upper. The shoe rests on a textured dark grey concrete surface, lit by dramatic side lighting that creates soft shadows and highlights the neon lime details. The image evokes a sense of kinetic energy and high-speed performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvxVho7HNWKmyLXC5661xearzMtJNG4G3LA-3b2yOKECbi9UKT_UrX7D1I_TJJKwg4dQI0B4TqoGCPCODdrh3HObYv2HQJ22EJzE22dmWJulPkdQnJLnGxdCAsXhZIwxuPFwwyuz8tHd011JdtXFIyVbOcycCx1-_15GkB8UktUNSN8nrW_q3syxxgVM33RD8yKzZv-z8pc5huCB_7uh2lbiNq9p4-i2MF2Gbf-nyssfsYvIiZo-6wHOJbItkUiE0fyAq9j16OtoM"/>
+</div>
+</div>
+<!-- Product Details Side -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<span class="inline-flex w-fit bg-secondary-fixed text-on-secondary-fixed text-label-bold font-label-bold px-3 py-1 rounded-full uppercase tracking-wider">Limited Edition</span>
+<h1 class="text-headline-xl font-headline-xl text-primary mt-2">Volt Runner X1</h1>
+<div class="flex items-center gap-4">
+<p class="text-headline-md font-headline-md text-on-surface">$245.00</p>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star_half</span>
+<span class="text-label-bold font-label-bold text-outline ml-2">(128 Reviews)</span>
+</div>
+</div>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+          Engineered for the elite. The Volt Runner X1 combines our patented Kinetic-Core™ propulsion system with an ultra-lightweight weave to shatter your personal records.
+        </p>
+<!-- Select Size -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="text-label-bold font-label-bold">Select Size (US)</span>
+<button class="text-label-bold font-label-bold text-primary underline underline-offset-4">Size Guide</button>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="py-3 text-label-bold font-label-bold rounded border border-outline-variant hover:border-primary transition-colors">8</button>
+<button class="py-3 text-label-bold font-label-bold rounded border border-outline-variant hover:border-primary transition-colors">8.5</button>
+<button class="py-3 text-label-bold font-label-bold rounded border border-primary-container bg-primary-container text-on-primary shadow-lg scale-105">9</button>
+<button class="py-3 text-label-bold font-label-bold rounded border border-outline-variant hover:border-primary transition-colors">9.5</button>
+<button class="py-3 text-label-bold font-label-bold rounded border border-outline-variant hover:border-primary transition-colors">10</button>
+<button class="py-3 text-label-bold font-label-bold rounded border border-outline-variant opacity-40 cursor-not-allowed">10.5</button>
+<button class="py-3 text-label-bold font-label-bold rounded border border-outline-variant hover:border-primary transition-colors">11</button>
+<button class="py-3 text-label-bold font-label-bold rounded border border-outline-variant hover:border-primary transition-colors">12</button>
+</div>
+<div class="flex items-center gap-2 text-error text-label-bold font-label-bold">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Only 5 left in your size</span>
+</div>
+</div>
+<!-- Add to Cart & Actions -->
+<div class="flex flex-col gap-4">
+<div class="flex gap-4">
+<div class="flex items-center border border-outline-variant rounded-lg px-2">
+<button class="p-2 hover:text-primary"><span class="material-symbols-outlined">remove</span></button>
+<input class="w-12 text-center border-none focus:ring-0 font-label-bold text-on-surface bg-transparent" type="number" value="1"/>
+<button class="p-2 hover:text-primary"><span class="material-symbols-outlined">add</span></button>
+</div>
+<a class="flex-1 bg-primary text-on-primary py-4 rounded-xl font-label-bold text-body-lg flex items-center justify-center gap-2 hover:bg-primary-container active:scale-95 transition-all shadow-xl shadow-primary/20 group" href="carrito_de_compras.html">
+<span>Add to Cart</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">shopping_cart</span>
+</a>
+</div>
+<button class="w-full py-4 border border-outline-variant rounded-xl font-label-bold text-on-surface hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">favorite</span>
+<span>Add to Wishlist</span>
+</button>
+</div>
+<!-- Technical Specs Accordion -->
+<div class="mt-4 border-t border-outline-variant">
+<details class="group py-4 border-b border-outline-variant" open="">
+<summary class="flex justify-between items-center cursor-pointer list-none font-label-bold text-on-surface uppercase tracking-wider">
+              Technical Specifications
+              <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="mt-4 grid grid-cols-2 gap-y-4">
+<div>
+<p class="text-label-sm font-label-sm text-outline">Weight</p>
+<p class="text-body-md font-body-md font-bold">198g (Size 9)</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-outline">Heel Drop</p>
+<p class="text-body-md font-body-md font-bold">8mm</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-outline">Midsole</p>
+<p class="text-body-md font-body-md font-bold">Kinetic-Core™ Carbon</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-outline">Upper</p>
+<p class="text-body-md font-body-md font-bold">Aero-Weave Mesh</p>
+</div>
+</div>
+</details>
+<details class="group py-4 border-b border-outline-variant">
+<summary class="flex justify-between items-center cursor-pointer list-none font-label-bold text-on-surface uppercase tracking-wider">
+              Sustainability &amp; Care
+              <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="mt-4 text-body-md font-body-md text-on-surface-variant">
+              Made with 40% recycled materials by weight. To clean, wipe with a damp cloth and air dry away from direct sunlight.
+            </div>
+</details>
+</div>
+</div>
+</div>
+<!-- Features Section -->
+<section class="mt-section-gap grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-8 rounded-2xl bg-surface-container-low border border-outline-variant flex flex-col gap-4">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'wght' 200;">rocket_launch</span>
+<h3 class="text-headline-md font-headline-md">Infinite Energy</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Our Kinetic-Core™ technology returns 85% of impact energy back into your stride.</p>
+</div>
+<div class="p-8 rounded-2xl bg-surface-container-low border border-outline-variant flex flex-col gap-4">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'wght' 200;">air</span>
+<h3 class="text-headline-md font-headline-md">Aero-Weave Upper</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Micro-engineered mesh provides targeted breathability in high-heat zones.</p>
+</div>
+<div class="p-8 rounded-2xl bg-surface-container-low border border-outline-variant flex flex-col gap-4">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'wght' 200;">shield</span>
+<h3 class="text-headline-md font-headline-md">High-Traction Grip</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Multi-surface rubber compound ensures total control in wet or dry conditions.</p>
+</div>
+</section>
+<!-- Related Products -->
+<section class="mt-section-gap">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Complete Your Gear</h2>
+<p class="text-body-lg font-body-lg text-outline">You might also like these best-sellers.</p>
+</div>
+<a class="text-label-bold font-label-bold text-primary flex items-center gap-1 group" href="cat_logo_completo_20_art_culos.html">
+          View All <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="flex gap-gutter overflow-x-auto pb-8 custom-scrollbar snap-x">
+<!-- Related Card 1 -->
+<div class="min-w-[280px] md:min-w-[320px] snap-start group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden mb-4 relative shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A side view of the Apex Racer sneaker in a sleek black and charcoal colorway, presented in a minimalist light-mode environment. The shoe is suspended as if in mid-air, casting a soft blue shadow. The aesthetic is clean, professional, and emphasizes high-fashion athletic design with a focus on sharp lines and premium synthetic textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRd3vKBa6vONU6CsBLDWvmbEE4cYK6SmC59_BAxUFtZBkEe7wVuml9E0OKhH13TyFOSs8q2m50m_eQEud_ly28xCQG-lMohNBkhkTqzFzp1JdGGUqxG3CAR51Iq-NztZq1eah1dHRlo7ay_-1E-RonddkJDwG9oQTsK5HYpi1lbxvoGs_p7ikDmIRhspxbLipU24yarzZ-oGtYh17dkEjtPBBlzQQTHYF0iNYZkwX0PqZUqV6OtHvN2VdLZuEPPwWsdR2ON-qq_Ds"/>
+<button class="absolute bottom-4 right-4 bg-surface w-10 h-10 rounded-full flex items-center justify-center text-primary shadow-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h4 class="font-label-bold text-on-surface group-hover:text-primary transition-colors">Apex Racer Elite</h4>
+<p class="text-label-sm font-label-sm text-outline">Racing / Carbon</p>
+<p class="font-bold text-on-surface mt-1">$210.00</p>
+</div>
+<!-- Related Card 2 -->
+<div class="min-w-[280px] md:min-w-[320px] snap-start group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden mb-4 relative shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern lifestyle athletic shoes in a minimalist white and subtle grey palette, positioned on a light grey platform in a bright, modern studio. Soft diffuse lighting creates a premium, luxe atmosphere. The image focuses on the sleek silhouette and the clean, high-contrast visual language of the brand, maintaining a professional 'Sporty-Luxe' vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL6KXbwqTHM9w6sMxKpWK4U-Y1vdkh02tK-nME3siJ8FrQld6JvVneb67Y-ibPKhMA2RtgrwfE42fSzHG2bA4B-rgZhKUzwy8waTSQxFkiWpQScMamYLng8hMlshKbLDF1DLPEmPAbfpLYPIqhoRNJoa96c0htM9PGdfDeqUUmgATG0CeGEJfrk0pjm7FR1r7Y8lDKKroVALm73Xh_OvtsL9adBgi7cEUFhpOyuVfc-sBKXG_vENX20a50BhZo_dJEcL_RPx3efbg"/>
+<button class="absolute bottom-4 right-4 bg-surface w-10 h-10 rounded-full flex items-center justify-center text-primary shadow-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h4 class="font-label-bold text-on-surface group-hover:text-primary transition-colors">Aero Flow Hybrid</h4>
+<p class="text-label-sm font-label-sm text-outline">Training / Casual</p>
+<p class="font-bold text-on-surface mt-1">$180.00</p>
+</div>
+<!-- Related Card 3 -->
+<div class="min-w-[280px] md:min-w-[320px] snap-start group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden mb-4 relative shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A pair of neon-detailed high-performance running socks and technical gear displayed flat on a light grey background. The lighting is high-key and commercial, highlighting the intricate knitting patterns and the vibrant lime and blue accents. The style is organized, professional, and aligned with the high-octane sporty-luxe aesthetic of the Kinetic brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLQeWXW3Sqp4h4OTF5r3553-FUWdWi9NmRAoD1m-sLZJrpVPVwufVpnIP2bw8pFNWmFgd2hS8Ql1i32MRs4n4Wd8oUcMNCxnfbUrUUSPFIeYCwhzSEErHKQWlpx7CqLHfYzQeROVAY7C786-K63o_FnOBlSNp6dCj8wMrCJeoPQMSMwSL97mAUuaGNdzGs81Z5K9U_64wtc4N1cuz4jA3xDNu7GZ5RNPbJEceoN7mEPVsVLwVuDt2CdRvxcWCKWysiRWnHzv2K_fw"/>
+<button class="absolute bottom-4 right-4 bg-surface w-10 h-10 rounded-full flex items-center justify-center text-primary shadow-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h4 class="font-label-bold text-on-surface group-hover:text-primary transition-colors">Pro-Comp Compression</h4>
+<p class="text-label-sm font-label-sm text-outline">Accessory / Tech</p>
+<p class="font-bold text-on-surface mt-1">$45.00</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="full-width bg-surface-container dark:bg-inverse-surface mt-section-gap">
+<div class="w-full px-margin-desktop py-section-gap max-w-container-max mx-auto flex flex-col md:flex-row justify-between gap-gutter">
+<div class="flex flex-col gap-6 max-w-sm">
+<a class="text-headline-md font-headline-md font-extrabold text-primary dark:text-inverse-primary" href="cat_logo-tenis.html">KINETIC</a>
+<p class="text-body-md font-body-md text-on-surface-variant">Redefining performance through kinetic engineering and relentless design. Join the elite.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-[20px]">public</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-[20px]">share</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-[20px]">mail</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<h5 class="text-label-bold font-label-bold text-on-surface">SHOP</h5>
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="cat_logo-tenis.html">Men's Shoes</a>
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="cat_logo_completo_20_art_culos.html">Women's Shoes</a>
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="Busqueda-avanzada.html">Collections</a>
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="cat_logo_completo_20_art_culos.html">New Arrivals</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-label-bold font-label-bold text-on-surface">SUPPORT</h5>
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Returns</a>
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Size Guide</a>
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Contact</a>
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Shipping</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-label-bold font-label-bold text-on-surface">LEGAL</h5>
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Sustainability</a>
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Terms of Use</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-label-sm font-label-sm text-on-surface-variant">© 2024 KINETIC ATHLETICS. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-outline">credit_card</span>
+<span class="material-symbols-outlined text-outline">account_balance_wallet</span>
+<span class="material-symbols-outlined text-outline">contactless</span>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interaction for size selection
+    const sizeButtons = document.querySelectorAll('.grid-cols-4 button:not(.opacity-40)');
+    sizeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        sizeButtons.forEach(b => {
+          b.classList.remove('border-primary-container', 'bg-primary-container', 'text-on-primary', 'shadow-lg', 'scale-105');
+          b.classList.add('border-outline-variant');
+        });
+        btn.classList.remove('border-outline-variant');
+        btn.classList.add('border-primary-container', 'bg-primary-container', 'text-on-primary', 'shadow-lg', 'scale-105');
+      });
+    });
+
+    // Quantity picker logic
+    const qtyInput = document.querySelector('input[type="number"]');
+    const plusBtn = qtyInput.nextElementSibling;
+    const minusBtn = qtyInput.previousElementSibling;
+
+    plusBtn.addEventListener('click', () => {
+      qtyInput.value = parseInt(qtyInput.value) + 1;
+    });
+
+    minusBtn.addEventListener('click', () => {
+      if(parseInt(qtyInput.value) > 1) {
+        qtyInput.value = parseInt(qtyInput.value) - 1;
+      }
+    });
+
+    // Simple scroll effect for navbar
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('py-1');
+        header.classList.remove('py-base');
+      } else {
+        header.classList.remove('py-1');
+        header.classList.add('py-base');
+      }
+    });
+  </script>
+</body></html>

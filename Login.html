@@ -1,0 +1,237 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-gradient {
+            background: radial-gradient(circle at 0% 0%, rgba(0, 53, 197, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, rgba(193, 241, 0, 0.08) 0%, transparent 50%);
+        }
+        .pattern-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0, 53, 197, 0.03) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f3f0f4",
+                    "on-secondary-container": "#546b00",
+                    "surface-container-high": "#eae7eb",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#c1f100",
+                    "on-primary-fixed-variant": "#0033c0",
+                    "surface": "#fbf8fc",
+                    "secondary": "#506600",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "inverse-surface": "#303033",
+                    "on-background": "#1b1b1e",
+                    "on-secondary-fixed": "#161e00",
+                    "surface-container-highest": "#e4e1e6",
+                    "outline": "#747688",
+                    "on-primary-container": "#d4d9ff",
+                    "on-surface": "#1b1b1e",
+                    "secondary-fixed": "#c3f400",
+                    "surface-bright": "#fbf8fc",
+                    "tertiary-fixed": "#e2e2e3",
+                    "on-surface-variant": "#434657",
+                    "primary": "#0035c5",
+                    "surface-dim": "#dcd9dd",
+                    "on-tertiary-fixed-variant": "#454748",
+                    "outline-variant": "#c4c5da",
+                    "primary-fixed-dim": "#b9c3ff",
+                    "primary-fixed": "#dde1ff",
+                    "on-tertiary-fixed": "#1a1c1d",
+                    "surface-tint": "#0046fa",
+                    "on-primary-fixed": "#001257",
+                    "error": "#ba1a1a",
+                    "background": "#fbf8fc",
+                    "surface-container": "#f0edf1",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#dbdbdc",
+                    "on-secondary-fixed-variant": "#3c4d00",
+                    "surface-container-low": "#f6f2f7",
+                    "secondary-fixed-dim": "#abd600",
+                    "tertiary-container": "#5f6061",
+                    "inverse-primary": "#b9c3ff",
+                    "primary-container": "#0047ff",
+                    "surface-variant": "#e4e1e6",
+                    "tertiary": "#47484a",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "8px",
+                    "section-gap": "80px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background min-h-screen flex flex-col font-body-md overflow-x-hidden">
+<header class="w-full bg-surface shadow-sm border-b border-outline-variant/20 relative z-20">
+<nav class="max-w-container-max mx-auto px-4 py-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-label-sm font-label-bold">
+<a class="text-primary hover:text-secondary transition-colors" href="index.html">Índice</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="cat_logo-tenis.html">Inicio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="cat_logo_completo_20_art_culos.html">Catálogo</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="Busqueda-avanzada.html">Búsqueda</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="Detalle-producto.html">Producto</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="carrito_de_compras.html">Carrito</a>
+<a class="text-primary border-b-2 border-secondary" href="Login.html">Login</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="Crear-cuenta.html">Registro</a>
+</nav>
+</header>
+<main class="flex-grow flex items-center justify-center relative px-margin-mobile md:px-0 py-section-gap kinetic-gradient pattern-bg">
+<!-- Background Accents -->
+<div class="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- Login Card -->
+<div class="w-full max-w-[480px] bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-[0_4px_16px_rgba(0,71,255,0.08)] relative z-10 transition-all duration-500 hover:shadow-[0_8px_32px_rgba(0,71,255,0.12)]">
+<!-- Logo Section -->
+<div class="flex flex-col items-center mb-10">
+<a class="text-headline-md font-headline-md font-extrabold text-primary tracking-tighter italic mb-2 block hover:opacity-90 transition-opacity" href="cat_logo-tenis.html">KINETIC</a>
+<h1 class="text-headline-md font-headline-md text-on-surface">Welcome Back</h1>
+<p class="text-body-md text-on-surface-variant mt-2">Sign in to your athlete profile</p>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4 mb-8">
+<button class="flex items-center justify-center gap-3 py-3 px-4 rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors group">
+<img alt="Google" class="w-5 h-5 grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKasEbkjLEXVILewxZGLhZQgZ7nzN5mmvWrwrafUA3I8JKUbgCa_U0mK02K6vjgwLrnaxwiVsAm1zmJ14_66eRrKPEL18tgOO_6B8T-T6qgRc-4_U0Q-e7sK-lsyQ5ADSnHpUvOmEn5hchYB3LgMAVEZkFry28JVs04wbQkEAbh9vmedUAX_wqzR9Ljg0LN73eoBdGEkyrWdAAgYZckapnd8-2rCGO9LrOgF6u2fX8OMFwTGUqPusvkzHoHrILha6E2V8xYsuBimw">
+<span class="text-label-bold text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 py-3 px-4 rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-[20px] text-on-surface group-hover:text-primary transition-colors" data-icon="apple" data-weight="fill" style="font-variation-settings: 'FILL' 1;">ios</span>
+<span class="text-label-bold text-on-surface">Apple</span>
+</button>
+</div>
+<div class="relative flex items-center justify-center mb-8">
+<div class="w-full border-t border-outline-variant"></div>
+<span class="absolute bg-surface-container-lowest px-4 text-label-sm text-outline uppercase tracking-widest">or email</span>
+</div>
+<!-- Form -->
+<form action="cat_logo-tenis.html" class="space-y-6" method="get">
+<div class="space-y-1.5">
+<label class="text-label-bold text-on-surface ml-1" for="email">Email Address</label>
+<div class="relative group">
+<input class="w-full px-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg focus:ring-0 focus:border-primary transition-all text-body-md placeholder:text-outline/50 outline-none" id="email" name="email" placeholder="name@example.com" required="" type="email">
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center ml-1">
+<label class="text-label-bold text-on-surface" for="password">Password</label>
+<a class="text-label-sm text-primary hover:text-secondary transition-colors" href="#">Forgot Password?</a>
+</div>
+<div class="relative group">
+<input class="w-full px-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg focus:ring-0 focus:border-primary transition-all text-body-md placeholder:text-outline/50 outline-none" id="password" name="password" placeholder="••••••••" required="" type="password">
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" id="remember" type="checkbox">
+<label class="text-label-sm text-on-surface-variant" for="remember">Keep me signed in for 30 days</label>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg text-label-bold uppercase tracking-widest hover:bg-primary/90 active:scale-[0.98] transition-all relative overflow-hidden group" type="submit">
+<span class="relative z-10">Sign In to KINETIC</span>
+<div class="absolute inset-0 bg-secondary-container opacity-0 group-hover:opacity-10 transition-opacity"></div>
+</button>
+</form>
+<p class="mt-8 text-center text-body-md text-on-surface-variant">
+                Don't have an account? 
+                <a class="text-primary font-bold hover:text-secondary transition-colors underline decoration-2 underline-offset-4" href="Crear-cuenta.html">Join the Club</a>
+</p>
+</div>
+<!-- Abstract Kinetic Visual (Desktop Only) -->
+<div class="hidden lg:block absolute bottom-0 left-0 w-full overflow-hidden h-40 pointer-events-none">
+<div class="flex justify-around items-end opacity-5">
+<span class="text-[120px] font-extrabold italic select-none">RUN</span>
+<span class="text-[120px] font-extrabold italic select-none">FAST</span>
+<span class="text-[120px] font-extrabold italic select-none">BEYOND</span>
+<span class="text-[120px] font-extrabold italic select-none">KINETIC</span>
+</div>
+</div>
+</main>
+<!-- Footer Rendering based on JSON -->
+<footer class="w-full px-margin-desktop py-base bg-surface-container-highest dark:bg-inverse-surface">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 py-8">
+<a class="text-headline-md font-headline-md font-extrabold text-primary hover:opacity-90 transition-opacity" href="cat_logo-tenis.html">KINETIC</a>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Returns</a>
+<a class="text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Sustainability</a>
+<a class="text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Size Guide</a>
+<a class="text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Contact</a>
+</div>
+</div>
+<div class="max-w-container-max mx-auto border-t border-outline-variant/30 py-6 text-center md:text-left">
+<p class="text-label-sm text-on-surface-variant">© 2024 KINETIC ATHLETICS. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for password visibility
+        document.querySelector('[data-icon="visibility"]').parentElement.addEventListener('click', function() {
+            const input = this.parentElement.querySelector('input');
+            const icon = this.querySelector('.material-symbols-outlined');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.textContent = 'visibility_off';
+            } else {
+                input.type = 'password';
+                icon.textContent = 'visibility';
+            }
+        });
+
+        // Atmospheric parallax on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            document.querySelectorAll('.blur-[100px], .blur-[120px]').forEach(el => {
+                el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+    </script>
+</body></html>
