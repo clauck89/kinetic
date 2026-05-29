@@ -107,6 +107,14 @@
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #747688; border-radius: 10px; }
         .glass-effect { backdrop-filter: blur(8px); background: rgba(255, 255, 255, 0.8); }
         .product-hover:hover .product-img { transform: scale(1.05); }
+        button[data-filter].filter-active {
+          background-color: #0035c5 !important;
+          color: #ffffff !important;
+          border-color: #0035c5 !important;
+        }
+        button[data-filter="color"].filter-active {
+          box-shadow: 0 0 0 3px rgba(0, 53, 197, 0.25);
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body-md min-h-screen">
@@ -137,22 +145,22 @@
 <aside class="w-full md:w-64 lg:w-72 shrink-0 space-y-8 py-base">
 <div class="flex items-center justify-between mb-4">
 <h2 class="text-headline-md font-headline-md text-on-surface uppercase tracking-tight">Filters</h2>
-<button class="text-label-sm font-label-sm text-primary hover:underline">Clear All</button>
+<button data-clear-all class="text-label-sm font-label-sm text-primary hover:underline">Clear All</button>
 </div>
 <!-- Category -->
 <section class="space-y-4">
 <h3 class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest">Category</h3>
 <div class="flex flex-col gap-2">
 <label class="flex items-center gap-3 cursor-pointer group">
-<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<input checked="" data-filter="category" value="Men" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
 <span class="text-body-md group-hover:text-primary transition-colors">Men</span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group">
-<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<input data-filter="category" value="Women" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
 <span class="text-body-md group-hover:text-primary transition-colors">Women</span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group">
-<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<input data-filter="category" value="Kids" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
 <span class="text-body-md group-hover:text-primary transition-colors">Kids</span>
 </label>
 </div>
@@ -161,19 +169,19 @@
 <section class="space-y-4">
 <h3 class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest">Brand</h3>
 <div class="grid grid-cols-1 gap-2">
-<button class="text-left text-body-md px-3 py-2 rounded-lg bg-surface-container hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+<button data-filter="brand" data-value="Nike" class="text-left text-body-md px-3 py-2 rounded-lg bg-surface-container hover:bg-primary-fixed transition-colors flex justify-between items-center group">
 <span>Nike</span>
 <span class="text-label-sm text-outline group-hover:text-primary">124</span>
 </button>
-<button class="text-left text-body-md px-3 py-2 rounded-lg bg-primary text-on-primary shadow-sm flex justify-between items-center">
+<button data-filter="brand" data-value="Adidas" data-selected="true" aria-pressed="true" class="text-left text-body-md px-3 py-2 rounded-lg bg-primary text-on-primary shadow-sm flex justify-between items-center">
 <span>Adidas</span>
 <span class="text-label-sm">89</span>
 </button>
-<button class="text-left text-body-md px-3 py-2 rounded-lg bg-surface-container hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+<button data-filter="brand" data-value="Puma" class="text-left text-body-md px-3 py-2 rounded-lg bg-surface-container hover:bg-primary-fixed transition-colors flex justify-between items-center group">
 <span>Puma</span>
 <span class="text-label-sm text-outline group-hover:text-primary">45</span>
 </button>
-<button class="text-left text-body-md px-3 py-2 rounded-lg bg-surface-container hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+<button data-filter="brand" data-value="New Balance" class="text-left text-body-md px-3 py-2 rounded-lg bg-surface-container hover:bg-primary-fixed transition-colors flex justify-between items-center group">
 <span>New Balance</span>
 <span class="text-label-sm text-outline group-hover:text-primary">67</span>
 </button>
@@ -183,20 +191,21 @@
 <section class="space-y-4">
 <h3 class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest">Size (US)</h3>
 <div class="grid grid-cols-4 gap-2">
-<button class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">7</button>
-<button class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">8</button>
-<button class="bg-primary text-on-primary py-2 text-label-sm rounded">9</button>
-<button class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">10</button>
-<button class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">11</button>
-<button class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">12</button>
-<button class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">13</button>
+<button data-filter="size" data-value="7" class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">7</button>
+<button data-filter="size" data-value="8" class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">8</button>
+<button data-filter="size" data-value="9" data-selected="true" aria-pressed="true" class="bg-primary text-on-primary py-2 text-label-sm rounded">9</button>
+<button data-filter="size" data-value="10" class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">10</button>
+<button data-filter="size" data-value="11" class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">11</button>
+<button data-filter="size" data-value="12" class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">12</button>
+<button data-filter="size" data-value="13" class="border border-outline-variant py-2 text-label-sm rounded hover:border-primary hover:text-primary transition-all">13</button>
 </div>
 </section>
 <!-- Price Range -->
 <section class="space-y-4">
 <h3 class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest">Price Range</h3>
 <div class="px-2">
-<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="500" min="0" type="range" value="250"/>
+<input data-filter="price" class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="500" min="0" type="range" value="250"/>
+<div class="mt-3 text-label-sm text-on-surface-variant">Max selected: <span data-price-value>$250</span></div>
 <div class="flex justify-between mt-4">
 <span class="text-label-bold font-label-bold px-3 py-1 bg-surface-container-low rounded border border-outline-variant">$0</span>
 <span class="text-label-bold font-label-bold px-3 py-1 bg-surface-container-low rounded border border-outline-variant">$500</span>
@@ -207,21 +216,21 @@
 <section class="space-y-4">
 <h3 class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest">Technology</h3>
 <div class="flex flex-wrap gap-2">
-<button class="px-4 py-1.5 rounded-full border border-primary text-primary text-label-sm font-label-bold bg-primary-fixed">Air</button>
-<button class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant text-label-sm hover:border-primary hover:text-primary transition-all">Gel</button>
-<button class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant text-label-sm hover:border-primary hover:text-primary transition-all">Nitro</button>
-<button class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant text-label-sm hover:border-primary hover:text-primary transition-all">Boost</button>
+<button data-filter="tech" data-value="Air" class="px-4 py-1.5 rounded-full border border-primary text-primary text-label-sm font-label-bold bg-primary-fixed">Air</button>
+<button data-filter="tech" data-value="Gel" class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant text-label-sm hover:border-primary hover:text-primary transition-all">Gel</button>
+<button data-filter="tech" data-value="Nitro" class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant text-label-sm hover:border-primary hover:text-primary transition-all">Nitro</button>
+<button data-filter="tech" data-value="Boost" class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant text-label-sm hover:border-primary hover:text-primary transition-all">Boost</button>
 </div>
 </section>
 <!-- Color Selection -->
 <section class="space-y-4">
 <h3 class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-widest">Color</h3>
 <div class="flex flex-wrap gap-3">
-<button class="w-8 h-8 rounded-full bg-on-surface ring-2 ring-offset-2 ring-primary transition-all"></button>
-<button class="w-8 h-8 rounded-full bg-white border border-outline-variant ring-offset-2 hover:ring-2 hover:ring-primary-container transition-all"></button>
-<button class="w-8 h-8 rounded-full bg-primary ring-offset-2 hover:ring-2 hover:ring-primary-container transition-all"></button>
-<button class="w-8 h-8 rounded-full bg-secondary-container ring-offset-2 hover:ring-2 hover:ring-primary-container transition-all"></button>
-<button class="w-8 h-8 rounded-full bg-error ring-offset-2 hover:ring-2 hover:ring-primary-container transition-all"></button>
+<button data-filter="color" data-value="black" class="w-8 h-8 rounded-full bg-on-surface ring-2 ring-offset-2 ring-primary transition-all"></button>
+<button data-filter="color" data-value="white" class="w-8 h-8 rounded-full bg-white border border-outline-variant ring-offset-2 hover:ring-2 hover:ring-primary-container transition-all"></button>
+<button data-filter="color" data-value="blue" class="w-8 h-8 rounded-full bg-primary ring-offset-2 hover:ring-2 hover:ring-primary-container transition-all"></button>
+<button data-filter="color" data-value="green" class="w-8 h-8 rounded-full bg-secondary-container ring-offset-2 hover:ring-2 hover:ring-primary-container transition-all"></button>
+<button data-filter="color" data-value="red" class="w-8 h-8 rounded-full bg-error ring-offset-2 hover:ring-2 hover:ring-primary-container transition-all"></button>
 </div>
 </section>
 </aside>
@@ -233,8 +242,8 @@
 <h1 class="text-headline-xl font-headline-xl text-on-surface mb-4">ENGINEERED FOR THE <span class="text-primary italic">EDGE.</span></h1>
 <p class="text-body-lg font-body-lg text-on-surface-variant mb-8">Discover the latest in high-performance sneaker technology. Filter by tech, style, or sport to find your next competitive advantage.</p>
 <div class="flex items-center bg-surface p-1 rounded-lg border border-outline shadow-lg max-w-md">
-<input class="flex-1 border-none focus:ring-0 text-body-md px-4 py-2" placeholder="Search by model, brand, or style..." type="text"/>
-<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded shadow hover:bg-primary transition-all font-label-bold flex items-center gap-2">
+<input data-search-input class="flex-1 border-none focus:ring-0 text-body-md px-4 py-2" placeholder="Search by model, brand, or style..." type="text"/>
+<button data-search-button class="bg-primary-container text-on-primary-container px-6 py-2 rounded shadow hover:bg-primary transition-all font-label-bold flex items-center gap-2">
 <span>Search</span>
 <span class="material-symbols-outlined text-[18px]">search</span>
 </button>
@@ -248,10 +257,10 @@
 </header>
 <!-- Results Grid Controls -->
 <div class="flex items-center justify-between border-b border-outline-variant pb-4">
-<p class="text-body-md text-on-surface-variant"><span class="font-bold text-on-surface">1,248</span> Results found</p>
+<p class="text-body-md text-on-surface-variant"><span data-results-count class="font-bold text-on-surface">1,248</span> Results found</p>
 <div class="flex items-center gap-4">
 <span class="text-label-sm font-label-sm text-on-surface-variant">Sort by:</span>
-<select class="bg-transparent border-none text-label-bold font-label-bold text-primary focus:ring-0 cursor-pointer">
+<select data-sort-select class="bg-transparent border-none text-label-bold font-label-bold text-primary focus:ring-0 cursor-pointer">
 <option>Newest Arrivals</option>
 <option>Price: Low to High</option>
 <option>Price: High to Low</option>
@@ -260,9 +269,9 @@
 </div>
 </div>
 <!-- Bento Product Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div data-results-container class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
 <!-- Product Card 1 (Large Feature) -->
-<div class="product-hover relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div data-title="ZoomX Vaporfly Next% 2" data-brand="Nike" data-category="Men" data-sizes="7,8,9,10,11,12,13" data-price="250" data-tech="Air" data-color="blue" data-tags="running,marathon,performance" data-date="202406" data-popularity="95" class="product-hover product-card relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
 <div class="aspect-[4/5] bg-surface-container-highest relative overflow-hidden">
 <img class="product-img w-full h-full object-cover transition-transform duration-500" data-alt="A side-profile shot of a vibrant red high-performance running sneaker on a neutral light grey background. The lighting is high-contrast and professional, emphasizing the aerodynamic design and the textured fabric of the shoe. The mood is energetic and athletic, capturing the high-octane luxury feel of a premier sports brand. The image is crisp and clean with a focus on technological detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl_rfwJE2oaCJyhR5LM5UKLpWgHHveRgyxiaqVUVo6SVVNX9IUn49zPelgrOcnoheBj5-Is5y9EjkIysRACAIm-O0iYWwiCFnkY4R9Ci7_E29uV6RKXIJUVqtGr5ngBdFWry82M8Et6S1SD6rCYvCp9Uhz_t-10h_KiTzD3CFdgQucIXaZHx_VHVGhw4qkAPt3V3eNFChFwV4xcHHGekcgTg2j3u96ASIrEkeD5yc1M1tp_0cs2AQrZubqrVgdZt_MvlBqup0c3SI"/>
 <div class="absolute top-4 left-4 bg-secondary-fixed text-on-secondary-fixed text-label-bold font-label-bold px-3 py-1 rounded shadow-sm">NEW RELEASE</div>
@@ -286,7 +295,7 @@
 </div>
 </div>
 <!-- Product Card 2 -->
-<div class="product-hover relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div data-title="UltraBoost Light" data-brand="Adidas" data-category="Men" data-sizes="7,8,9,10,11,12,13" data-price="190" data-tech="Boost" data-color="white" data-tags="running,comfort,training" data-date="202405" data-popularity="88" class="product-hover product-card relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
 <div class="aspect-[4/5] bg-surface-container-highest relative overflow-hidden">
 <img class="product-img w-full h-full object-cover transition-transform duration-500" data-alt="A pair of sleek white and neon-accented futuristic sneakers placed elegantly on a soft grey studio backdrop. The lighting is diffuse yet bright, highlighting the premium leather textures and neon green stitching details. The aesthetic is clean and modern, evoking a high-fashion street-style status. The composition is professional and spacious, reflecting an elite athletic lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaLiepdNc13xDYgl5KroFEUCwZsUts9rxrichI2vXP0LRIcXBpOvt39REB_iVzj8KbWLaYspvY7MF6syatSiFyHx0Ol-maGjbiKjEJ1lHfjUqZ1xGMkhIqA1c9QNEmOCNQgaAeokGVvcOrPdHY-i4mRZg-_dMUSFlstLpTYQni0dXgtwD4Htvc2cc8GuNV91_7_KrrcZFjdaMvnxUxxRbhP-TV9xBsiP2yT1WJo2yEy7SbXgtdcG9ckv3CMggU5MxXjcPqubEfyvY"/>
 <div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-bold font-label-bold px-3 py-1 rounded shadow-sm italic">LIMITED</div>
@@ -309,7 +318,7 @@
 </div>
 </div>
 <!-- Product Card 3 -->
-<div class="product-hover relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div data-title="Fresh Foam X 1080" data-brand="New Balance" data-category="Men" data-sizes="7,8,9,10,11,12,13" data-price="160" data-tech="Nitro" data-color="black" data-tags="running,cushion,road" data-date="202403" data-popularity="79" class="product-hover product-card relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
 <div class="aspect-[4/5] bg-surface-container-highest relative overflow-hidden">
 <img class="product-img w-full h-full object-cover transition-transform duration-500" data-alt="A premium black athletic sneaker with chrome silver accents and a translucent sole, displayed in a minimalist high-contrast lighting setup. The dark materials absorb the light while the chrome elements create sharp, dynamic reflections. The overall mood is sophisticated and technological, appealing to performance-oriented consumers. The scene is set against a pristine, solid light grey background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXuiBZlPojc7hXCDJOL_XTQp3zg5DhfJF0XR914vXHHhqCrmcto9NSMyh57GA_OWUwazpgpN2ZZdxoHvHfdRaGIz0IWRv-oSKEUBtVvPM9O0fR_Q5uMGKs-y2hYSvYG6556zX8QkbJKSMSb_EKjUD0L03kwZpKAirOYdIKXXauNK5X0jNqgPPG3RakaUnXMEb4fFuMb6mv7ahxyuYHtiHe_fav1cZpeCItwWt-NVZSHjteiiC-HqXvWmd2RzFExAvmh4r1AbIdHc0"/>
 <button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-on-surface hover:text-error transition-colors">
@@ -332,7 +341,7 @@
 </div>
 </div>
 <!-- Product Card 4 -->
-<div class="product-hover relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div data-title="Metcon 8" data-brand="Nike" data-category="Men" data-sizes="7,8,9,10,11,12,13" data-price="104" data-tech="Air" data-color="green" data-tags="training,gym,crossfit" data-date="202404" data-popularity="82" class="product-hover product-card relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
 <div class="aspect-[4/5] bg-surface-container-highest relative overflow-hidden">
 <img class="product-img w-full h-full object-cover transition-transform duration-500" data-alt="A sleek and aggressive neon yellow training shoe on a clean light-colored background. The photography captures the complex mesh texture and the sturdy rubber outsole designed for high-impact sports. The lighting is direct and bright, highlighting the vibrant color palette and the high-energy design philosophy. The aesthetic is contemporary and powerful, emphasizing sports performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHpHn8RZcnsCTGa535grSNRnALpS5HtSux_LG0rTOhxpXCL3fWARJeiOYpQW6sZz3n70QxtZ4plTxUggTRkjYEJjtXcNqrXUCHuh4PZwG8vMS04b0YegQ0CIWpRQmNqRzvWpO5Hoomx2BhUjxCu9inLaa5UocQSz7JOEUGyBREiqQfT0lV7KDBT_re2CvW5yAk7mHfzC5Hz6YWIchiH9L70eKgy1gyjkWTCZBmUkpxscelQlN6awsNFPa5OQjU3iquxrJDQb3i_pY"/>
 <div class="absolute bottom-4 left-4 bg-error text-on-error text-label-bold font-label-bold px-3 py-1 rounded shadow-sm">20% OFF</div>
@@ -359,7 +368,7 @@
 </div>
 </div>
 <!-- Product Card 5 -->
-<div class="product-hover relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div data-title="Deviate Nitro 2" data-brand="Puma" data-category="Men" data-sizes="7,8,9,10,11,12,13" data-price="160" data-tech="Nitro" data-color="red" data-tags="running,track,speed" data-date="202402" data-popularity="74" class="product-hover product-card relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
 <div class="aspect-[4/5] bg-surface-container-highest relative overflow-hidden">
 <img class="product-img w-full h-full object-cover transition-transform duration-500" data-alt="A minimalist aesthetic photograph of a high-end designer sneaker in soft pastel tones, presented on a monochromatic light grey pedestal. The lighting is soft and directional, creating gentle shadows that define the shoe's sleek silhouette and premium materials. The mood is calm and luxury-focused, blending athletic functionality with editorial fashion style. The background is uncluttered and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcN_AXLeMr6IgXPdahToBNCBn8rOYGgahX05bo73Z1MDUD0WbQAwVPK4SoBduuXOuWrkSyPNItNjd42GhLj0HKTzwV6VHqgXH4gWgjml5EYrzO4_5yjEdGj9W3NKBmxCQApsQPMQuixzIqtT4Ebgs4di9rmVD5aXFlHq75GRfxLombJ-pUQJaWIVorqAkCQMJzIn7VpTu6jH-wpVxk6YXAE6BeSyR_1vSUaErKj_6-W9ZBVsVa0eYzJmuhgEEA6fqvTww7J_TRKpA"/>
 <button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-on-surface hover:text-error transition-colors">
@@ -382,7 +391,7 @@
 </div>
 </div>
 <!-- Product Card 6 -->
-<div class="product-hover relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
+<div data-title="Luka 2 'Black & White'" data-brand="Jordan" data-category="Men" data-sizes="7,8,9,10,11,12,13" data-price="130" data-tech="Air" data-color="black" data-tags="basketball,street,retro" data-date="202401" data-popularity="86" class="product-hover product-card relative group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300 shadow-[0_4px_16px_rgba(0,71,255,0.08)]">
 <div class="aspect-[4/5] bg-surface-container-highest relative overflow-hidden">
 <img class="product-img w-full h-full object-cover transition-transform duration-500" data-alt="A bold, high-contrast shot of a performance basketball shoe featuring intricate patterns and metallic accents. The shoe is positioned dynamically as if in motion, set against a studio backdrop with dramatic top-down lighting that emphasizes its structural integrity and material complexity. The aesthetic is loud and competitive, capturing the intensity of professional sports. The colors are vivid and high-definition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLQeWXW3Sqp4h4OTF5r3553-FUWdWi9NmRAoD1m-sLZJrpVPVwufVpnIP2bw8pFNWmFgd2hS8Ql1i32MRs4n4Wd8oUcMNCxnfbUrUUSPFIeYCwhzSEErHKQWlpx7CqLHfYzQeROVAY7C786-K63o_FnOBlSNp6dCj8wMrCJeoPQMSMwSL97mAUuaGNdzGs81Z5K9U_64wtc4N1cuz4jA3xDNu7GZ5RNPbJEceoN7mEPVsVLwVuDt2CdRvxcWCKWysiRWnHzv2K_fw"/>
 <button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-on-surface hover:text-error transition-colors">
@@ -404,6 +413,10 @@
 </a>
 </div>
 </div>
+</div>
+<div data-no-results class="hidden rounded-xl border border-outline-variant bg-surface-container-low p-8 text-center text-on-surface-variant">
+<p class="text-headline-md font-headline-md mb-2">No se encontraron resultados.</p>
+<p class="text-body-md">Ajusta los filtros o borra la búsqueda para explorar toda la colección.</p>
 </div>
 <!-- Pagination -->
 <div class="flex justify-center items-center gap-2 pt-8">
@@ -463,23 +476,239 @@
 </div>
 </footer>
 <script>
-        // Micro-interactions for Filter Sidebar
-        document.querySelectorAll('input[type="range"]').forEach(range => {
-            range.addEventListener('input', (e) => {
-                const val = e.target.value;
-                // Dynamically update UI if needed
-            });
-        });
+        (() => {
+            const resultsContainer = document.querySelector('[data-results-container]');
+            const noResultsElement = document.querySelector('[data-no-results]');
+            const resultsCount = document.querySelector('[data-results-count]');
+            const searchInput = document.querySelector('[data-search-input]');
+            const searchButton = document.querySelector('[data-search-button]');
+            const sortSelect = document.querySelector('[data-sort-select]');
+            const clearAllButton = document.querySelector('[data-clear-all]');
+            const priceRange = document.querySelector('input[data-filter="price"]');
+            const priceValue = document.querySelector('[data-price-value]');
+            const filterButtons = Array.from(document.querySelectorAll('button[data-filter]'));
+            const categoryInputs = Array.from(document.querySelectorAll('input[data-filter="category"]'));
+            const productCards = Array.from(document.querySelectorAll('.product-card'));
 
-        // Add sticky hover effect for product cards
-        document.querySelectorAll('.product-hover').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
+            const filterState = {
+                query: '',
+                categories: new Set(),
+                brands: new Set(),
+                sizes: new Set(),
+                tech: new Set(),
+                colors: new Set(),
+                price: Number(priceRange.value),
+                sort: sortSelect.value,
+            };
+
+            const normalize = value => String(value || '').trim().toLowerCase();
+
+            const syncButtonState = (button, active) => {
+                if (active) {
+                    button.classList.add('filter-active');
+                    button.setAttribute('aria-pressed', 'true');
+                    button.dataset.selected = 'true';
+                } else {
+                    button.classList.remove('filter-active');
+                    button.setAttribute('aria-pressed', 'false');
+                    delete button.dataset.selected;
+                }
+            };
+
+            const getUrlParams = () => new URLSearchParams(window.location.search);
+
+            const applyFiltersFromUrl = () => {
+                const params = getUrlParams();
+                const query = params.get('query') || '';
+                const sort = params.get('sort') || 'Newest Arrivals';
+                const price = Number(params.get('price') || priceRange.max || 500);
+                const categories = params.getAll('category').map(normalize);
+                const brands = params.getAll('brand').map(normalize);
+                const sizes = params.getAll('size').map(normalize);
+                const tech = params.getAll('tech').map(normalize);
+                const colors = params.getAll('color').map(normalize);
+
+                searchInput.value = query;
+                sortSelect.value = sort;
+                priceRange.value = price;
+                priceValue.textContent = `$${price}`;
+
+                categoryInputs.forEach(input => {
+                    input.checked = categories.includes(normalize(input.value));
+                });
+
+                filterButtons.forEach(button => {
+                    const value = normalize(button.dataset.value);
+                    if (button.dataset.filter === 'brand') {
+                        syncButtonState(button, brands.includes(value));
+                    } else if (button.dataset.filter === 'size') {
+                        syncButtonState(button, sizes.includes(value));
+                    } else if (button.dataset.filter === 'tech') {
+                        syncButtonState(button, tech.includes(value));
+                    } else if (button.dataset.filter === 'color') {
+                        syncButtonState(button, colors.includes(value));
+                    }
+                });
+            };
+
+            const updateUrlFromFilters = () => {
+                const params = new URLSearchParams();
+                buildFilterState();
+
+                if (filterState.query) params.set('query', searchInput.value.trim());
+                if (filterState.sort && filterState.sort !== 'Newest Arrivals') params.set('sort', filterState.sort);
+                if (filterState.price !== Number(priceRange.max)) params.set('price', String(filterState.price));
+
+                filterState.categories.forEach(value => params.append('category', value));
+                filterState.brands.forEach(value => params.append('brand', value));
+                filterState.sizes.forEach(value => params.append('size', value));
+                filterState.tech.forEach(value => params.append('tech', value));
+                filterState.colors.forEach(value => params.append('color', value));
+
+                const newUrl = `${window.location.pathname}?${params.toString()}`;
+                window.history.replaceState({}, '', newUrl);
+            };
+
+            const buildFilterState = () => {
+                filterState.query = normalize(searchInput.value);
+                filterState.categories = new Set(categoryInputs.filter(input => input.checked).map(input => normalize(input.value)));
+                filterState.brands = new Set(filterButtons.filter(button => button.dataset.filter === 'brand' && button.dataset.selected === 'true').map(button => normalize(button.dataset.value)));
+                filterState.sizes = new Set(filterButtons.filter(button => button.dataset.filter === 'size' && button.dataset.selected === 'true').map(button => normalize(button.dataset.value)));
+                filterState.tech = new Set(filterButtons.filter(button => button.dataset.filter === 'tech' && button.dataset.selected === 'true').map(button => normalize(button.dataset.value)));
+                filterState.colors = new Set(filterButtons.filter(button => button.dataset.filter === 'color' && button.dataset.selected === 'true').map(button => normalize(button.dataset.value)));
+                filterState.price = Number(priceRange.value);
+                filterState.sort = sortSelect.value;
+            };
+
+            const matchesQuery = (card, query) => {
+                if (!query) return true;
+                const title = normalize(card.dataset.title);
+                const brand = normalize(card.dataset.brand);
+                const category = normalize(card.dataset.category);
+                const tags = normalize(card.dataset.tags);
+                return [title, brand, category, tags].some(text => text.includes(query));
+            };
+
+            const matchesMultiOption = (selectedSet, value) => {
+                if (selectedSet.size === 0) return true;
+                return selectedSet.has(normalize(value));
+            };
+
+            const matchesSize = (selectedSet, sizesString) => {
+                if (selectedSet.size === 0) return true;
+                const sizes = sizesString.split(',').map(size => normalize(size));
+                return [...selectedSet].some(selectedSize => sizes.includes(selectedSize));
+            };
+
+            const sortVisibleCards = () => {
+                const visibleCards = productCards.filter(card => card.style.display !== 'none');
+                const sorted = [...visibleCards];
+
+                switch (filterState.sort) {
+                    case 'Price: Low to High':
+                        sorted.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
+                        break;
+                    case 'Price: High to Low':
+                        sorted.sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
+                        break;
+                    case 'Most Popular':
+                        sorted.sort((a, b) => Number(b.dataset.popularity) - Number(a.dataset.popularity));
+                        break;
+                    case 'Newest Arrivals':
+                    default:
+                        sorted.sort((a, b) => Number(b.dataset.date) - Number(a.dataset.date));
+                        break;
+                }
+
+                sorted.forEach(card => resultsContainer.appendChild(card));
+            };
+
+            const updateResults = () => {
+                buildFilterState();
+                let visibleCount = 0;
+
+                productCards.forEach(card => {
+                    const categoryMatch = matchesMultiOption(filterState.categories, card.dataset.category);
+                    const brandMatch = matchesMultiOption(filterState.brands, card.dataset.brand);
+                    const sizeMatch = matchesSize(filterState.sizes, card.dataset.sizes);
+                    const techMatch = matchesMultiOption(filterState.tech, card.dataset.tech);
+                    const colorMatch = matchesMultiOption(filterState.colors, card.dataset.color);
+                    const priceMatch = Number(card.dataset.price) <= filterState.price;
+                    const queryMatch = matchesQuery(card, filterState.query);
+
+                    const visible = categoryMatch && brandMatch && sizeMatch && techMatch && colorMatch && priceMatch && queryMatch;
+                    card.style.display = visible ? '' : 'none';
+
+                    if (visible) visibleCount += 1;
+                });
+
+                if (visibleCount === 0) {
+                    resultsContainer.classList.add('hidden');
+                    noResultsElement.classList.remove('hidden');
+                } else {
+                    resultsContainer.classList.remove('hidden');
+                    noResultsElement.classList.add('hidden');
+                }
+
+                resultsCount.textContent = visibleCount.toString();
+                sortVisibleCards();
+                updateUrlFromFilters();
+            };
+
+            const toggleButton = button => {
+                const isSelected = button.dataset.selected === 'true';
+                syncButtonState(button, !isSelected);
+                updateResults();
+            };
+
+            const resetFilters = () => {
+                searchInput.value = '';
+                categoryInputs.forEach(input => input.checked = false);
+                filterButtons.forEach(button => syncButtonState(button, false));
+                sortSelect.value = 'Newest Arrivals';
+                priceRange.value = priceRange.max;
+                priceValue.textContent = `$${priceRange.max}`;
+                filterState.price = Number(priceRange.max);
+                updateResults();
+            };
+
+            priceRange.addEventListener('input', event => {
+                const value = Number(event.target.value);
+                priceValue.textContent = `$${value}`;
+                filterState.price = value;
+                updateResults();
             });
-        });
+
+            searchButton.addEventListener('click', updateResults);
+            searchInput.addEventListener('keydown', event => {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    updateResults();
+                }
+            });
+
+            sortSelect.addEventListener('change', () => updateResults());
+            clearAllButton.addEventListener('click', resetFilters);
+            categoryInputs.forEach(input => input.addEventListener('change', updateResults));
+            filterButtons.forEach(button => {
+                const isPreselected = button.dataset.selected === 'true';
+                syncButtonState(button, isPreselected);
+                button.addEventListener('click', () => toggleButton(button));
+            });
+
+            applyFiltersFromUrl();
+            updateResults();
+
+            // Preserve hover effect for product cards
+            document.querySelectorAll('.product-hover').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        })();
     </script>
 </body></html>
